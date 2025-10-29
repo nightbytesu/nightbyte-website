@@ -10,11 +10,11 @@ export default function Hero() {
 
       <Image className='-z-100 absolute top-0 left-0' src='/assets/hero-bg.svg' alt='hero-bg' fill />
 
-      <div className='flex flex-col h-full pt-14 pb-32 mx-auto container'>
+      <div className='flex flex-col h-full pt-14 pb-32 mx-auto max-w-6xl'>
         <Navbar />
 
         <div className='flex-1' />
-        <div className='flex-3 flex flex-col'>
+        <div className='flex-2 flex flex-col'>
 
           <div className='flex flex-col items-center max-w-3/4 mx-auto justify-center'>
 

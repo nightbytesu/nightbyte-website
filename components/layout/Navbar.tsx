@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import GooeyNav from "../GooeyNav";
+import GlassSurface from "../GlassSurface";
+import StickerPeel from "../StickerPeel";
 const items = [
   { label: "Home", href: "#" },
   { label: "Services", href: "#" },
@@ -26,5 +28,6 @@ export default function Navbar() {
 
       <Button>Contact Us</Button>
     </nav>
+
   )
 }

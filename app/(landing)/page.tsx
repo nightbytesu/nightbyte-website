@@ -10,14 +10,27 @@ import WhyUs from "./_components/WhyUs";
 export default function Landing() {
   return (
     <div>
-      <Hero />
-      <About />
-      <Expertise />
-      <WhyUs />
-      <Team />
-      <Target />
-      <StartProject />
-
+      <div>
+        <Hero />
+      </div>
+      <div className="container mx-auto mb-40">
+        <About />
+      </div>
+      <div className="container mx-auto mb-40">
+        <Expertise />
+      </div>
+      <div className="container mx-auto mb-40">
+        <WhyUs />
+      </div>
+      <div className="container mx-auto mb-40">
+        <Team />
+      </div>
+      <div className="container mx-auto mb-40">
+        <Target />
+      </div>
+      <div className="container mx-auto mb-40">
+        <StartProject />
+      </div>
     </div>
   )
 }
