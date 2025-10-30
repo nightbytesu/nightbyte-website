@@ -26,7 +26,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
 
 
       {/* Slider Container */}
-      <div className="relative flex items-center justify-center py-8">
+      <div className="relative flex items-center justify-center">
         <button
           onClick={() => swiperRef.current?.swiper?.slidePrev()}
           className="absolute left-4 z-50 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 transition-colors"
@@ -46,30 +46,32 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
           onInit={updateSlideScales}
         >
           {[...teamMembers, ...teamMembers].map((member) => (
-            <SwiperSlide key={member.id} className="flex items-center justify-center transition-transform duration-500 py-8">
+            <SwiperSlide key={member.id} className="flex items-center justify-center transition-transform duration-500 py-24">
               <ElectricBorder
                 color="#7df9ff"
-                className="swiper-slide-item"
+                className="swiper-slide-item h-[400px] w-[400px] flex flex-col justify-center items-center gap-4 atransition-all duration-500 hover:-translate-y-10"
                 speed={1}
                 chaos={0.5}
                 thickness={2}
                 style={{ borderRadius: 16 }}
               >
-                <div className="flex flex-col items-center gap-4 p-6 rounded-2xl border-2 border-slate-700 bg-slate-900/60 backdrop-blur-sm transition-all duration-500 swiper-slide-item">
-                  <div className="relative rounded-xl border-2 border-blue-400">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={140}
-                      height={140}
-                      className="object-cover"
-                    />
-                  </div>
 
-                  <div className="text-center">
-                    <h3 className="text-base font-semibold text-white">{member.name}</h3>
-                    <p className="text-xs text-slate-400 mt-1">{member.role}</p>
-                  </div>
+                <div className='flex justify-center items-center'>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={200}
+                    height={200}
+                    className="object-cover relative rounded-2xl"
+                    style={{
+                      boxShadow: 'rgba(65,113,249, 0.4) 0px 0px 0px 5px'
+                    }}
+                  />
+                </div>
+
+                <div className="text-center mt-8">
+                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                  <p className="text-sm text-slate-400 mt-1">{member.role}</p>
                 </div>
               </ElectricBorder>
 

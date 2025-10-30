@@ -6,7 +6,7 @@ import { MoveUpRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <div className='relative h-[900px]'>
+    <div className='relative h-[850px] scale-y-105'>
 
       <Image className='-z-100 absolute top-0 left-0' src='/assets/hero-bg.svg' alt='hero-bg' fill />
 

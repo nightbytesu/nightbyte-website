@@ -7,19 +7,19 @@ const teamMembers = [
     id: 1,
     name: "Caliphe Musulman",
     role: "Fondateur & CEO",
-    image: "/assets/teams/ramzy.png",
+    image: "/assets/teams/ramzyk.png",
   },
   {
     id: 2,
     name: "Ramzy Kemmoun",
     role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/ramzy.png",
+    image: "/assets/teams/ramzyk.png",
   },
   {
     id: 3,
     name: "Eren Yeager",
     role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/ramzy.png",
+    image: "/assets/teams/ramzyk.png",
 
   },
 
