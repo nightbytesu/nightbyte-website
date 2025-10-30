@@ -42,23 +42,21 @@ const whyUs: WhyUsItemProps[] = [
 
 export default function WhyUs() {
   return (
-    <div>
-      <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
-        <h2 className="text-5xl font-medium">Pourquoi choisir NightByte ?</h2>
-        <p className="text-lg">
-          Une approche innovante, des résultats concrets.
-        </p>
+    <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
+      <h2 className="text-5xl font-medium">Pourquoi choisir NightByte ?</h2>
+      <p className="text-lg">
+        Une approche innovante, des résultats concrets.
+      </p>
 
-        <Timeline>
-          {whyUs.map((why, i) =>
-            <TimelineItem
-              key={why.id}
-              side={i % 2 === 0 ? 'left' : 'right'}>
-              <WhyUsItem {...why} />
-            </TimelineItem>)
-          }
-        </Timeline>
-      </div>
+      <Timeline>
+        {whyUs.map((why, i) =>
+          <TimelineItem
+            key={why.id}
+            side={i % 2 === 0 ? 'left' : 'right'}>
+            <WhyUsItem {...why} />
+          </TimelineItem>)
+        }
+      </Timeline>
     </div>
   );
 }

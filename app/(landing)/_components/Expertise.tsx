@@ -1,6 +1,5 @@
-'use client'
+import SpotlightCard from '@/components/SpotlightCard';
 import ExpertiseItem, { ExpertiseItemProps } from './ExpertiseItem'
-import MagicBento from '@/components/MagicBento'
 
 
 const expertises: Array<ExpertiseItemProps> = [
@@ -56,14 +55,21 @@ export default function Expertise() {
 
       children.push(
         <div className='flex gap-2' key={first.id + '-' + second.id}>
-          <ExpertiseItem {...first} key={first.id} />
-          <ExpertiseItem {...second} key={second.id} />
+
+          <SpotlightCard className={first.className} spotlightColor="rgba(0, 229, 255, 0.2)">
+            <ExpertiseItem {...first} className='' key={first.id} />
+          </SpotlightCard>
+          <SpotlightCard className={second.className} spotlightColor="rgba(0, 229, 255, 0.2)">
+            <ExpertiseItem {...second} className='' key={second.id} />
+          </SpotlightCard>
+
         </div>)
     }
 
     return children
 
   }
+
   return (
     <div>
 
@@ -77,20 +83,7 @@ export default function Expertise() {
         </p>
 
       </div>
-      <MagicBento
-        textAutoHide={true}
-        enableStars={true}
-        enableSpotlight={true}
-        enableBorderGlow={true}
-        enableTilt={true}
-        enableMagnetism={true}
-        clickEffect={true}
-        spotlightRadius={300}
-        particleCount={12}
-        glowColor="132, 0, 255"
-        items={expertises}
-        renderItem={expertise => <ExpertiseItem {...expertise} key={expertise.id} />}
-      />
+
 
       <div className='flex flex-col gap-2'>
         {renderItems(expertises)}
