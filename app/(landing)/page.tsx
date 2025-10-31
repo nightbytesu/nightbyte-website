@@ -22,9 +22,14 @@ export default function Landing() {
       <div className="max-w-6xl mx-auto mb-40">
         <WhyUs />
       </div>
-      <div className="max-w-6xl mx-auto mb-40">
-        <Team />
+      <div className="relative">
+
+        <div className="max-w-6xl mx-auto mb-40">
+          <Team />
+        </div>
+        <div className="absolute top-0 left-0 bg-[#4171F93B] rounded-full w-100 h-100" />
       </div>
+
       <div className="max-w-6xl mx-auto mb-40">
         <Target />
       </div>

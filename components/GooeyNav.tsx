@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 interface GooeyNavItem {
   label: string;
   href: string;
+  dropdownItems?: GooeyNavItem[];
 }
 
 export interface GooeyNavProps {
@@ -19,11 +20,11 @@ export interface GooeyNavProps {
 
 const GooeyNav: React.FC<GooeyNavProps> = ({
   items,
-  animationTime = 600,
+  animationTime = 100,
   particleCount = 15,
   particleDistances = [90, 10],
   particleR = 100,
-  timeVariance = 300,
+  timeVariance = 100,
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0
 }) => {
@@ -32,8 +33,9 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
+  const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);
 
-  const [random] = useState(() => Math.random())
+  const [random] = useState(() => Math.random());
 
   const noise = (n = 1) => n / 2 - random * n;
   const getXY = (distance: number, pointIndex: number, totalPoints: number): [number, number] => {
@@ -54,10 +56,10 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   const makeParticles = (element: HTMLElement) => {
     const d: [number, number] = particleDistances;
     const r = particleR;
-    const bubbleTime = animationTime * 2 + timeVariance;
+    const bubbleTime = animationTime + timeVariance;
     element.style.setProperty('--time', `${bubbleTime}ms`);
     for (let i = 0; i < particleCount; i++) {
-      const t = animationTime * 2 + noise(timeVariance * 2);
+      const t = animationTime * 1.5 + noise(timeVariance * 2);
       const p = createParticle(i, t, d, r);
       element.classList.remove('active');
       setTimeout(() => {
@@ -102,9 +104,13 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   };
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
     const liEl = e.currentTarget;
-    if (activeIndex === index) return;
+    if (activeIndex === index) {
+      setDropdownVisible(!dropdownVisible); // Toggle dropdown visibility
+      return;
+    }
     setActiveIndex(index);
     updateEffectPosition(liEl);
+    setDropdownVisible(false); // Close dropdown if a new item is clicked
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');
       particles.forEach(p => filterRef.current!.removeChild(p));
@@ -151,7 +157,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
   return (
     <>
-      {/* This effect is quite difficult to recreate faithfully using Tailwind, so a style tag is a necessary workaround */}
       <style>
         {`
           :root {
@@ -163,7 +168,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             pointer-events: none;
             display: grid;
             place-items: center;
-            z-index: 1;
+            z-index: 1000;
           }
           .effect.text {
             color: white;
@@ -180,8 +185,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             content: "";
             position: absolute;
             inset: -75px;
-            z-index: -2;
-            background: black;
+            z-index: -100;
+            background: transparent;
           }
           .effect.filter::after {
             content: "";
@@ -190,7 +195,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             background: white;
             transform: scale(0);
             opacity: 0;
-            z-index: -1;
+            z-index: -100;
             border-radius: 9999px;
           }
           .effect.active::after {
@@ -281,12 +286,27 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             content: "";
             position: absolute;
             inset: 0;
-            border-radius: 8px;
-            background: white;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .9);
             opacity: 0;
             transform: scale(0);
             transition: all 0.3s ease;
-            z-index: -1;
+            z-index: -100;
+          }
+          .dropdown {
+            position: absolute;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: ${dropdownVisible ? 'block' : 'none'};
+          }
+          .dropdown-item {
+            padding: 8px 16px;
+            cursor: pointer;
+          }
+          .dropdown-item:hover {
+            background: rgba(0, 0, 0, 0.1);
           }
         `}
       </style>
@@ -294,7 +314,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
           <ul
             ref={navRef}
-            className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3]"
+            className="flex gap-4 list-none p-0 px-4 m-0 relative z-100"
             style={{
               color: 'white',
               textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)'
@@ -303,7 +323,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? 'active' : ''
+                className={`rounded-full px-2 relative cursor-pointer transition-[background-color_color_box-shadow] duration-100 ease shadow-[0_0_0.5px_1.5px_transparent] text-white ${activeIndex === index ? 'active' : ''
                   }`}
               >
                 <a
@@ -314,6 +334,15 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                 >
                   {item.label}
                 </a>
+                {item.dropdownItems && (
+                  <div className="dropdown">
+                    {item.dropdownItems.map((dropdownItem, dropdownIndex) => (
+                      <div key={dropdownIndex} className="dropdown-item">
+                        <a href={dropdownItem.href}>{dropdownItem.label}</a>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

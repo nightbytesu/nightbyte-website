@@ -47,7 +47,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
         >
           {[...teamMembers, ...teamMembers].map((member, i) => (
             <SwiperSlide key={`${member.id}-${i}`} className="flex items-center justify-center transition-transform duration-500 py-24">
-              <ElectricBorder
+              {/* <ElectricBorder
                 color="#7df9ff"
                 className="swiper-slide-item h-[400px] w-[400px] flex flex-col justify-center items-center gap-4 atransition-all duration-500 hover:-translate-y-10"
                 speed={1}
@@ -55,25 +55,25 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
                 thickness={2}
                 style={{ borderRadius: 16 }}
               >
+ */}
+              <div className='flex justify-center items-center'>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={200}
+                  height={200}
+                  className="object-cover relative rounded-2xl"
+                  style={{
+                    boxShadow: 'rgba(65,113,249, 0.4) 0px 0px 0px 5px'
+                  }}
+                />
+              </div>
 
-                <div className='flex justify-center items-center'>
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    className="object-cover relative rounded-2xl"
-                    style={{
-                      boxShadow: 'rgba(65,113,249, 0.4) 0px 0px 0px 5px'
-                    }}
-                  />
-                </div>
-
-                <div className="text-center mt-8">
-                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-                  <p className="text-sm text-slate-400 mt-1">{member.role}</p>
-                </div>
-              </ElectricBorder>
+              <div className="text-center mt-8">
+                <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                <p className="text-sm text-slate-400 mt-1">{member.role}</p>
+              </div>
+              {/* </ElectricBorder> */}
 
             </SwiperSlide>
           ))}

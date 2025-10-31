@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import TargetItem from "./TargetItem";
 
@@ -30,8 +29,7 @@ export default function Target() {
       <div
         className="hover:scale-105 transition-all cursor-pointer relative overflow-hidden rounded-2xl p-px shadow-[0_0_25px_-5px_rgba(255,255,255,0.1)]"
         style={{
-          background:
-            "linear-gradient(135deg, rgba(20,10,40,1), rgba(60,30,80,1), rgba(9,0,19,1))",
+          background: ''
         }}
       >
         <div
