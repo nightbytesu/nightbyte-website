@@ -3,6 +3,7 @@ import "./globals.css";
 import SplashCursor from "@/components/SplashCursor";
 
 import localFont from 'next/font/local'
+import Footer from "@/components/layout/Footer";
 
 const author = localFont({
   src: [
@@ -47,6 +48,9 @@ export default function RootLayout({
       >
         <SplashCursor />
         {children}
+        <div className="max-w-6xl mx-auto mb-40">
+          <Footer />
+        </div>
       </body>
     </html>
   );
