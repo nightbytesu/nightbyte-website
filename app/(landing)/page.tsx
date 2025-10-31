@@ -13,22 +13,22 @@ export default function Landing() {
       <div>
         <Hero />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <About />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <Expertise />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <WhyUs />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <Team />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <Target />
       </div>
-      <div className="container mx-auto mb-40">
+      <div className="max-w-6xl mx-auto mb-40">
         <StartProject />
       </div>
     </div>

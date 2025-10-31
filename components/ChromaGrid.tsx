@@ -1,6 +1,7 @@
 'use client'
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 
 export interface ChromaItem {
   image: string;
@@ -182,8 +183,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)'
             }}
           />
-          <div className="relative z-10 flex-1 p-[10px] box-border">
-            <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
+          <div className="relative z-10 flex-1 p-2.5 box-border">
+            <Image src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
           </div>
           <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
             <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
@@ -207,7 +208,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       />
       <div
         ref={fadeRef}
-        className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-250 z-40"
         style={{
           backdropFilter: 'grayscale(1) brightness(0.78)',
           WebkitBackdropFilter: 'grayscale(1) brightness(0.78)',

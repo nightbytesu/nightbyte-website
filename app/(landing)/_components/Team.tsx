@@ -28,10 +28,10 @@ const teamMembers = [
 export default function Team() {
   return (
     <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
-      {/* <h2 className="text-5xl font-medium">Équipe</h2>
+      <h2 className="text-5xl font-medium">Équipe</h2>
       <p className="text-lg">
         Des talents unis par la passion tech.
-      </p> */}
+      </p>
       <TeamSlider teamMembers={teamMembers} />
 
     </div>

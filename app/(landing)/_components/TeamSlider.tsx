@@ -45,8 +45,8 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
           onSlideChange={updateSlideScales}
           onInit={updateSlideScales}
         >
-          {[...teamMembers, ...teamMembers].map((member) => (
-            <SwiperSlide key={member.id} className="flex items-center justify-center transition-transform duration-500 py-24">
+          {[...teamMembers, ...teamMembers].map((member, i) => (
+            <SwiperSlide key={`${member.id}-${i}`} className="flex items-center justify-center transition-transform duration-500 py-24">
               <ElectricBorder
                 color="#7df9ff"
                 className="swiper-slide-item h-[400px] w-[400px] flex flex-col justify-center items-center gap-4 atransition-all duration-500 hover:-translate-y-10"
