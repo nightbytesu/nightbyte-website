@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface BackgroundEffectProps extends React.ComponentProps<"div"> {
-  type?: "radial" | "square";
+  type?: "radial" | "square" | 'image';
   left?: number | string;
   right?: number | string;
   top?: number | string;
@@ -11,6 +12,7 @@ interface BackgroundEffectProps extends React.ComponentProps<"div"> {
   width?: number;
   height?: number;
   background?: string;
+  src?: string
 }
 
 export default function BackgroundEffect({
@@ -24,8 +26,31 @@ export default function BackgroundEffect({
   width = 400,
   height = 400,
   background = '#4171F93B',
+  src,
   className,
 }: BackgroundEffectProps) {
+
+  if (type === 'image' && src) {
+    return <div style={{
+      left: right !== 0 ? undefined : left,
+      right,
+      top,
+      bottom,
+      width,
+      height,
+      transform: `translate(${translateX}, ${translateY})`,
+    }} className="absolute">
+      <Image
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '75%', height: '300px' }}
+        src={src}
+        alt={src}
+      />
+    </div>
+  }
+
   return (
     <div
       style={{
@@ -45,7 +70,6 @@ export default function BackgroundEffect({
           '':
             type === "square",
         },
-
         className
       )}
     />

@@ -21,7 +21,7 @@ export default function About() {
 
         <div className='flex justify-center flex-col space-y-6 flex-1'>
           <GradientText
-            colors={["#D1DDFF", '#7B9EFF',]}
+            colors={["#D1DDFF", '#7B9EFF', 'white',]}
             showBorder={false}
             className='text-5xl font-medium'
             textClassName='pb-3'

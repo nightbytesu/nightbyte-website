@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TargetItem from "./TargetItem";
+import GradientText from "@/components/GradientText";
 
 interface ITarget {
   id: number;
@@ -17,14 +18,16 @@ const targets: ITarget[] = [
 export default function Target() {
   return (
     <div className="mb-10 flex flex-col items-center justify-center">
-      <h2 className="text-5xl mb-6 font-medium text-white">
+      <GradientText
+        colors={["#D1DDFF", '#7B9EFF', 'white',]}
+        showBorder={false}
+        className="text-5xl mb-6 font-medium text-white" textClassName='pb-3'
+      >
         Pour qui travaillons-nous ?
-      </h2>
+      </GradientText>
       <p className="text-lg mb-10 text-gray-300">
         Entreprises, startups, projets qui rêvent grand.
       </p>
-
-
 
       <div
         className="hover:scale-105 transition-all cursor-pointer relative overflow-hidden rounded-2xl p-px shadow-[0_0_25px_-5px_rgba(255,255,255,0.1)]"

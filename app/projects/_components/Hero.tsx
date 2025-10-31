@@ -20,7 +20,7 @@ export default function Hero() {
           <div className='flex flex-col items-center max-w-4/5 mx-auto justify-center'>
 
             <GradientText
-              colors={["#D1DDFF", '#7B9EFF',]}
+              colors={["#D1DDFF", '#7B9EFF', 'white',]}
               showBorder={false}
               className='text-6xl mb-6 text-center'
               textClassName='pb-3'

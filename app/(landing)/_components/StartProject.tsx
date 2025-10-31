@@ -1,3 +1,4 @@
+import GradientText from "@/components/GradientText";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
@@ -7,9 +8,14 @@ export default function StartProject() {
   return (
     <div className="mb-10 flex flex-col items-center justify-center">
       <div className="max-w-2/3 space-y-6">
-        <h2 className="text-5xl font-medium text-white text-center">
+        <GradientText
+          colors={["#D1DDFF", '#7B9EFF', 'white',]}
+          showBorder={false}
+          className="text-5xl font-medium text-white text-center"
+          textClassName="pb-3"
+        >
           Un projet à concrétiser ou une compétence à développer ?
-        </h2>
+        </GradientText>
         <p className="text-lg text-gray-300 text-center">
           Que vous souhaitiez lancer une marque, créer un produit digital ou monter en compétences, NightByte est votre partenaire de croissance.
         </p>

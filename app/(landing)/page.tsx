@@ -29,6 +29,7 @@ export default function Landing() {
         <div className="max-w-6xl mx-auto mb-40">
           <WhyUs />
         </div>
+        <BackgroundEffect type="image" src="/assets/commet.svg" translateX="25%" translateY="-50%" right="0" />
         <BackgroundEffect translateX="-50%" left="50%" />
         <BackgroundEffect translateX="-50%" top="100%" left="50%" />
       </div>

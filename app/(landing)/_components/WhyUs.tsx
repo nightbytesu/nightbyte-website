@@ -1,5 +1,6 @@
 import { Timeline, TimelineItem } from "@/components/Timeline";
 import WhyUsItem, { WhyUsItemProps } from "./WhyUsItem";
+import GradientText from "@/components/GradientText";
 
 const whyUs: WhyUsItemProps[] = [
   {
@@ -43,7 +44,15 @@ const whyUs: WhyUsItemProps[] = [
 export default function WhyUs() {
   return (
     <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
-      <h2 className="text-5xl font-medium">Pourquoi choisir NightByte ?</h2>
+
+      <GradientText
+        colors={["#D1DDFF", '#7B9EFF', 'white']}
+        showBorder={false}
+        className='text-5xl font-medium'
+        textClassName='pb-3'
+      >
+        Pourquoi choisir NightByte ?
+      </GradientText>
       <p className="text-lg">
         Une approche innovante, des résultats concrets.
       </p>

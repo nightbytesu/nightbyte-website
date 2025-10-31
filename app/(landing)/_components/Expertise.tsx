@@ -76,7 +76,7 @@ export default function Expertise() {
       <div className='space-y-6 mb-10 flex flex-col items-center justify-center'>
 
         <GradientText
-          colors={["#D1DDFF", '#7B9EFF',]}
+          colors={["#D1DDFF", '#7B9EFF', 'white',]}
           showBorder={false}
           className='text-5xl font-medium'
           textClassName='pb-3'
