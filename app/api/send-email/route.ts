@@ -1,11 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-
 export async function POST(request: NextRequest) {
   try {
     const { name, phone, email, message } = await request.json()
 
-    // Validate required fields
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -13,7 +12,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check environment variables
     console.log('Checking environment variables...')
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
       console.error('Missing email credentials:', {
@@ -28,38 +26,31 @@ export async function POST(request: NextRequest) {
 
     console.log('Creating transporter with user:', process.env.EMAIL_USER)
 
-    // Create transporter with SSL configuration
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD, // Use app password for Gmail
       },
       tls: {
-        // Reject unauthorized certificates in production, but allow in development
         rejectUnauthorized: process.env.NODE_ENV === 'production',
-        // Add additional SSL options to handle certificate issues
         ciphers: 'SSLv3',
       },
-      // Add connection timeout and socket timeout
       connectionTimeout: 60000,
       greetingTimeout: 30000,
       socketTimeout: 60000,
     })
 
-    // Verify connection
     console.log('Verifying SMTP connection...')
     try {
       await transporter.verify()
       console.log('SMTP connection verified successfully')
-    } catch (verifyError) {
-      console.log('SMTP verification failed, but continuing (this is normal in some environments):', (verifyError as any)?.message)
-      // Don't throw here, as the actual sending might still work
+    } catch (verifyError: any) {
+      console.log('SMTP verification failed, but continuing (this is normal in some environments):', verifyError?.message)
     }
 
-    // Email to your company
     const companyMailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.COMPANY_EMAIL || 'nightbytesu@gmail.com',
@@ -83,7 +74,6 @@ export async function POST(request: NextRequest) {
       `,
     }
 
-    // Confirmation email to the user
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
@@ -116,11 +106,10 @@ export async function POST(request: NextRequest) {
       `,
     }
 
-    // Send emails
     console.log('Sending company email...')
     await transporter.sendMail(companyMailOptions)
     console.log('Company email sent successfully')
-    
+
     console.log('Sending user confirmation email...')
     await transporter.sendMail(userMailOptions)
     console.log('User confirmation email sent successfully')
@@ -129,16 +118,16 @@ export async function POST(request: NextRequest) {
       { message: 'Emails sent successfully' },
       { status: 200 }
     )
-  } catch (error) {
+  } catch (error: any) {
     console.error('Detailed error sending email:', {
-      message: (error as any)?.message,
-      code: (error as any)?.code,
-      command: (error as any)?.command,
-      response: (error as any)?.response,
-      stack: (error as any)?.stack
+      message: error?.message,
+      code: error?.code,
+      command: error?.command,
+      response: error?.response,
+      stack: error?.stack
     })
     return NextResponse.json(
-      { error: 'Failed to send email', details: (error as any)?.message },
+      { error: 'Failed to send email', details: error?.message },
       { status: 500 }
     )
   }
