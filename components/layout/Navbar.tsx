@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import GooeyNav from "../GooeyNav";
+import useNavigate from "@/hooks/useNavigate";
 const items = [
   { label: "Home", href: "#" },
   {
@@ -12,14 +15,29 @@ const items = [
 ];
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <nav className="h-20 px-16 flex justify-between items-center bg-[#4171F92B] rounded-full space-x-16">
+      <button
+        className="cursor-pointer"
+        onClick={handleLogoClick}
+      >
       <Image
         src="/assets/nightbyte-logo.png"
         width={140}
         height={60}
         alt="Nightbyte"
       />
+      </button>
       <GooeyNav
         items={items}
         particleCount={15}
@@ -32,6 +50,7 @@ export default function Navbar() {
       />
 
       <Button
+        onClick={handleContactClick}
         className="border border-white text-white rounded-full w-30 cursor-pointer py-5"
         style={{
           background:

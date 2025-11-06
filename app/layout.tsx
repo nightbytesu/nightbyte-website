@@ -52,6 +52,10 @@ export default function RootLayout({
           <Footer />
         </div>
       </body>
+      
+      <div className="max-w-6xl mx-auto px-4">
+        <Footer />
+      </div>
     </html>
   );
 }

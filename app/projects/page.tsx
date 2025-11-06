@@ -1,17 +1,15 @@
 import Hero from "./_components/Hero";
+import Realisations from "./_components/Realisations";
 import Templates from "./_components/Templates";
 
 
 export default function Projects() {
   return (
     <div>
-      <div>
-        <Hero />
+      <div >
+        <Realisations />
       </div>
-      <div className="max-w-6xl mx-auto mb-40">
-        <Projects />
-      </div>
-      <div className="max-w-6xl mx-auto mb-40">
+      <div className="">
         <Templates />
       </div>
     </div>

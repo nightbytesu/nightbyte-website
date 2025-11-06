@@ -1,14 +1,18 @@
 import GradientText from "@/components/GradientText";
-import { HeroParallax } from "@/components/ui/hero-parallax";
+import Navbar from "@/components/layout/Navbar";
+import { PinContainer } from "@/components/ui/3d-pin";
+import Image from "next/image";
 
-export default function Templates() {
+export default function Realisations() {
 
   return <div className=''>
 
+    <Image className='-z-100 absolute top-0 left-0' src='/assets/hero-bg.svg' alt='hero-bg' fill />
 
+    <div className='flex flex-col h-full pt-14 pb-32'>
+      <Navbar />
 
-    <HeroParallax products={products} header={
-      <div>
+      <div className="space-y-6 mb-10 flex flex-col items-center justify-center mt-35">
         <GradientText
           colors={["#D1DDFF", '#7B9EFF', 'white',]}
           showBorder={false}
@@ -17,15 +21,41 @@ export default function Templates() {
         >
           Modèles de sites web
         </GradientText>
-        <p className="text-lg text-center">
+        <p className="text-lg">
           Découvrez notre gamme de modèles de sites web et d’applications mobiles entièrement personnalisables.
         </p>
-      </div>} />
 
+      </div>
+      <div className='mt-0'>
+        <div className="grid grid-cols-3 gap-8">
+          {realisations.map(realisation => (
+            <PinContainer
+              key={realisation.title}
+              title="/ui.aceternity.com"
+              href="https://twitter.com/mannupaaji"
+            >
+              <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-5 ">
+                <h3 className="max-w-xs pb-2! m-0! font-bold  text-base text-slate-100">
+                  Aceternity UI
+                </h3>
+                <div className="text-base m-0! p-0! font-normal">
+                  <span className="text-slate-500 ">
+                    Customizable Tailwind CSS and Framer Motion Components.
+                  </span>
+                </div>
+                <div className="flex flex-1 w-full rounded-lg mt-4 bg-linear-to-br from-violet-500 via-purple-500 to-blue-500" />
+              </div>
+            </PinContainer>
+          )
+          )}
+        </div>
+      </div>
+    </div>
   </div>
 
 }
-export const products = [
+
+export const realisations = [
   {
     title: "Moonbeam",
     link: "https://gomoonbeam.com",
