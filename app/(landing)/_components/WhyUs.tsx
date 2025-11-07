@@ -43,17 +43,17 @@ const whyUs: WhyUsItemProps[] = [
 
 export default function WhyUs() {
   return (
-    <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
+    <div id="pourquoi-nous" className="space-y-4 md:space-y-6 mb-8 md:mb-10 flex flex-col items-center justify-center px-4">
 
       <GradientText
         colors={["#D1DDFF", '#7B9EFF', 'white']}
         showBorder={false}
-        className='text-5xl font-medium'
+        className='text-3xl md:text-4xl lg:text-5xl font-medium text-center'
         textClassName='pb-3'
       >
         Pourquoi choisir NightByte ?
       </GradientText>
-      <p className="text-lg">
+      <p className="text-base md:text-lg text-center">
         Une approche innovante, des résultats concrets.
       </p>
 
