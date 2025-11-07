@@ -17,13 +17,13 @@ export type ExpertiseItemProps = {
 export default function ExpertiseItem({ title, icon, alt, description, ctaText = 'View projects', className }: ExpertiseItemProps) {
   return (
     <div className={
-      cn('flex h-80 flex-1 border border-[#4172f92d] flex-col space-y-6 rounded-2xl p-10', className)
+      cn('flex h-64 sm:h-72 md:h-80 flex-1 border border-[#4172f92d] flex-col space-y-4 md:space-y-6 rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10', className)
     }>
-      <Image src={icon} width={64} height={64} alt={alt || icon} />
-      <p>{title}</p>
-      <p>{description}</p>
-      <Button variant={'outline'} className='w-fit rounded-full'>
-        {ctaText} <MoveUpRight className='w-4 h-4' />
+      <Image src={icon} width={48} height={48} className="sm:w-12 sm:h-12 md:w-16 md:h-16" alt={alt || icon} />
+      <p className="text-sm sm:text-base md:text-lg font-medium">{title}</p>
+      <p className="text-xs sm:text-sm md:text-base text-gray-300 flex-1">{description}</p>
+      <Button variant={'outline'} className='w-fit rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-4 py-1 md:py-2'>
+        {ctaText} <MoveUpRight className='w-3 h-3 sm:w-4 sm:h-4 ml-1' />
       </Button>
     </div>
   )
