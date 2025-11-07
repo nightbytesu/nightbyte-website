@@ -1,35 +1,34 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SplashCursor from "@/components/SplashCursor";
 
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import Footer from "@/components/layout/Footer";
+import SpaceCursor from "@/components/SpaceCursor";
 
 const author = localFont({
   src: [
-
     {
-      path: '../public/fonts/Author_Complete/Author-Regular.woff2',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/Author_Complete/Author-Regular.woff2",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: '../public/fonts/Author_Complete/Author-Medium.woff2',
-      weight: '500',
-      style: 'normal',
+      path: "../public/fonts/Author_Complete/Author-Medium.woff2",
+      weight: "500",
+      style: "normal",
     },
     {
-      path: '../public/fonts/Author_Complete/Author-Semibold.woff2',
-      weight: '600',
-      style: 'normal',
+      path: "../public/fonts/Author_Complete/Author-Semibold.woff2",
+      weight: "600",
+      style: "normal",
     },
     {
-      path: '../public/fonts/Author_Complete/Author-Bold.woff2',
-      weight: '700',
-      style: 'normal',
+      path: "../public/fonts/Author_Complete/Author-Bold.woff2",
+      weight: "700",
+      style: "normal",
     },
   ],
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,16 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${author.className} antialiased`}
-      >
-        <SplashCursor />
+      <body className={`${author.className} antialiased`}>
+        <SpaceCursor />
         {children}
+        <div className="max-w-6xl mx-auto px-4">
+          <Footer />
+        </div>
       </body>
-      
-      <div className="max-w-6xl mx-auto px-4">
-        <Footer />
-      </div>
     </html>
   );
 }
