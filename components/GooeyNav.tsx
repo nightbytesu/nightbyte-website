@@ -103,7 +103,18 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     textRef.current.innerText = element.innerText;
   };
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+    e.preventDefault(); // Prevent default anchor behavior
     const liEl = e.currentTarget;
+    const href = items[index].href;
+    
+    // Handle section navigation
+    if (href.startsWith('#') && href !== '#') {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    } else if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     if (activeIndex === index) {
       setDropdownVisible(!dropdownVisible); // Toggle dropdown visibility
       return;
