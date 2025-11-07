@@ -19,7 +19,7 @@ export default function Contact() {
       </div>
 
       <div className='flex flex-col min-h-screen relative z-10'>
-      <div className="pt-14 pb-42">
+      <div className="pt-8 md:pt-14 pb-8">
         <div className="max-w-6xl mx-auto w-full px-4">
         <Navbar />
         </div>
