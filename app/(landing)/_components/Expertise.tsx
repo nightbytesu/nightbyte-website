@@ -49,48 +49,62 @@ const expertises: Array<ExpertiseItemProps> = [
 export default function Expertise() {
 
   const renderItems = (items: Array<ExpertiseItemProps>) => {
-    const children: React.ReactNode[] = []
-
-    for (let i = 0; i < items.length - 1; i += 2) {
-      const [first, second] = [items[i], items[i + 1]];
-
-      children.push(
-        <div className='flex gap-2 h-full' key={first.id + '-' + second.id}>
-          <SpotlightCard className={first.className} spotlightColor="rgba(0, 229, 255, 0.2)">
-            <ExpertiseItem {...first} className='' key={first.id} />
-          </SpotlightCard>
-          <SpotlightCard className={second.className} spotlightColor="rgba(0, 229, 255, 0.2)">
-            <ExpertiseItem {...second} className='' key={second.id} />
-          </SpotlightCard>
+    return (
+      <>
+        {/* Mobile: Grid layout */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden'>
+          {items.map((item) => (
+            <SpotlightCard key={item.id} className={`w-full ${item.className}`} spotlightColor="rgba(0, 229, 255, 0.2)">
+              <ExpertiseItem {...item} className='' />
+            </SpotlightCard>
+          ))}
         </div>
-      )
-    }
 
-    return children
-
+        {/* Desktop: Original paired layout */}
+        <div className='hidden md:flex md:flex-col gap-2'>
+          {(() => {
+            const pairs = [];
+            for (let i = 0; i < items.length - 1; i += 2) {
+              const [first, second] = [items[i], items[i + 1]];
+              pairs.push(
+                <div className='flex gap-2 h-full' key={first.id + '-' + second.id}>
+                  <SpotlightCard className={first.className} spotlightColor="rgba(0, 229, 255, 0.2)">
+                    <ExpertiseItem {...first} className='' key={first.id} />
+                  </SpotlightCard>
+                  <SpotlightCard className={second.className} spotlightColor="rgba(0, 229, 255, 0.2)">
+                    <ExpertiseItem {...second} className='' key={second.id} />
+                  </SpotlightCard>
+                </div>
+              );
+            }
+            return pairs;
+          })()}
+        </div>
+      </>
+    );
   }
 
   return (
-    <div>
+    <div id='expertise'>
 
-      <div className='space-y-6 mb-10 flex flex-col items-center justify-center'>
+      <div className='space-y-4 md:space-y-6 mb-8 md:mb-10 flex flex-col items-center justify-center px-4'>
 
         <GradientText
           colors={["#D1DDFF", '#7B9EFF', 'white',]}
           showBorder={false}
-          className='text-5xl font-medium'
+          className='text-3xl md:text-4xl lg:text-5xl font-medium text-center'
           textClassName='pb-3'
         >
-          Nos pôles d’expertise
+          Nos pôles d'expertise
         </GradientText>
-        <p className='text-lg'>
-          Des solutions digitales pensées pour l’impact.
+        <p className='text-base md:text-lg text-center'>
+          Des solutions digitales pensées pour l'impact.
         </p>
 
       </div>
 
 
-      <div className='flex flex-col gap-2'>
+      <div className='px-4 md:px-0'>
         {renderItems(expertises)}
       </div>
     </div>
