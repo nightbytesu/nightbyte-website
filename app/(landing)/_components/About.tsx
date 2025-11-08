@@ -2,8 +2,31 @@
 import GradientText from "@/components/GradientText";
 import MagicBento from "@/components/MagicBento";
 import Image from "next/image";
+import { useState } from "react";
+import { motion, Variants } from "motion/react";
 
 export default function About() {
+  const [isHovered, setIsHovered] = useState(false);
+  const imageVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
     <div id="a-propos" className="relative">
       <MagicBento
@@ -18,7 +41,11 @@ export default function About() {
         glowColor="132, 0, 255"
         items={[0]}
         renderItem={() => (
-          <div className="border border-[#4172f92d] shadow-2xl flex flex-col lg:flex-row px-6 md:px-12 lg:px-16 py-8 md:py-12 rounded-2xl gap-6">
+          <div
+            className="border border-[#4172f92d] shadow-2xl flex flex-col lg:flex-row px-6 md:px-12 lg:px-16 py-8 md:py-12 rounded-2xl gap-6"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="flex justify-center flex-col space-y-4 md:space-y-6 flex-1">
               <GradientText
                 colors={["#D1DDFF", "#7B9EFF", "white"]}
@@ -36,15 +63,26 @@ export default function About() {
                 startups, PME et créateurs vers la réussite digitale.
               </p>
             </div>
+
             <div className="flex flex-1 items-center justify-center lg:justify-end">
-              <Image
-                width={0}
-                height={0}
-                sizes="100vw"
+              {/* --- C'EST ICI QU'ON APPLIQUE FRAMER MOTION --- */}
+              <motion.div
                 className="w-3/4 lg:w-3/4 h-48 md:h-64 lg:h-72 object-contain"
-                src="/assets/rocket.png"
-                alt="Rocket"
-              />
+                // Indique à Framer Motion de quel état il doit passer
+                initial="hidden"
+                animate={isHovered ? "visible" : "hidden"}
+                variants={imageVariants}
+              >
+                <Image
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  // L'Image Next.js doit être enfant du motion.div
+                  className="w-full h-full object-contain"
+                  src="/assets/rocket.png"
+                  alt="Rocket"
+                />
+              </motion.div>
             </div>
           </div>
         )}

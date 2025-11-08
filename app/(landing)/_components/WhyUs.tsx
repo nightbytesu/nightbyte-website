@@ -43,13 +43,15 @@ const whyUs: WhyUsItemProps[] = [
 
 export default function WhyUs() {
   return (
-    <div id="pourquoi-nous" className="space-y-4 md:space-y-6 mb-8 md:mb-10 flex flex-col items-center justify-center px-4">
-
+    <div
+      id="pourquoi-nous"
+      className="space-y-4 md:space-y-6 mb-8 md:mb-10 flex flex-col items-center justify-center px-8"
+    >
       <GradientText
-        colors={["#D1DDFF", '#7B9EFF', 'white']}
+        colors={["#D1DDFF", "#7B9EFF", "white"]}
         showBorder={false}
-        className='text-3xl md:text-4xl lg:text-5xl font-medium text-center'
-        textClassName='pb-3'
+        className="text-3xl md:text-4xl lg:text-5xl font-medium text-center"
+        textClassName="pb-3"
       >
         Pourquoi choisir NightByte ?
       </GradientText>
@@ -58,13 +60,11 @@ export default function WhyUs() {
       </p>
 
       <Timeline>
-        {whyUs.map((why, i) =>
-          <TimelineItem
-            key={why.id}
-            side={i % 2 === 0 ? 'left' : 'right'}>
+        {whyUs.map((why, i) => (
+          <TimelineItem key={why.id} side={i % 2 === 0 ? "left" : "right"}>
             <WhyUsItem {...why} />
-          </TimelineItem>)
-        }
+          </TimelineItem>
+        ))}
       </Timeline>
     </div>
   );

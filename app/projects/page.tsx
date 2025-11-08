@@ -2,7 +2,6 @@ import Hero from "./_components/Hero";
 import Realisations from "./_components/Realisations";
 import Templates from "./_components/Templates";
 
-
 export default function Projects() {
   return (
     <div>
@@ -19,5 +18,5 @@ export default function Projects() {
         <Templates />
       </div>
     </div>
-  )
+  );
 }

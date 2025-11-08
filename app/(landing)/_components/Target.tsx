@@ -17,11 +17,12 @@ const targets: ITarget[] = [
 
 export default function Target() {
   return (
-    <div className="mb-8 md:mb-10 flex flex-col items-center justify-center px-4">
+    <div className="mb-8 md:mb-10 flex flex-col items-center justify-center px-8">
       <GradientText
-        colors={["#D1DDFF", '#7B9EFF', 'white',]}
+        colors={["#D1DDFF", "#7B9EFF", "white"]}
         showBorder={false}
-        className="text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 font-medium text-white text-center" textClassName='pb-3'
+        className="text-3xl md:text-4xl lg:text-5xl mb-4 md:mb-6 font-medium text-white text-center"
+        textClassName="pb-3"
       >
         Pour qui travaillons-nous ?
       </GradientText>
@@ -29,12 +30,7 @@ export default function Target() {
         Entreprises, startups, projets qui rêvent grand.
       </p>
 
-      <div
-        className="hover:scale-105 transition-all cursor-pointer relative overflow-hidden rounded-2xl p-px shadow-[0_0_25px_-5px_rgba(255,255,255,0.1)] w-full max-w-5xl"
-        style={{
-          background: ''
-        }}
-      >
+      <div className="hover:scale-105 transition-all cursor-pointer relative overflow-hidden rounded-2xl p-px shadow-[0_0_25px_-5px_rgba(255,255,255,0.1)] w-full max-w-5xl">
         <div
           className="rounded-2xl flex flex-col lg:flex-row flex-1 gap-6 lg:gap-16 py-8 md:py-12 px-6 md:px-12 w-full backdrop-blur-md border border-white/5"
           style={{
@@ -58,7 +54,8 @@ export default function Target() {
 
           <ul className="flex flex-1 flex-col justify-center lg:justify-between text-gray-200 space-y-3 lg:space-y-0">
             {targets.map((target) => (
-              <TargetItem key={target.id} title={target.title} />))}
+              <TargetItem key={target.id} title={target.title} />
+            ))}
           </ul>
         </div>
       </div>

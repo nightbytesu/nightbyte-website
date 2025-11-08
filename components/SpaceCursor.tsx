@@ -37,12 +37,13 @@ const SpaceCursor = () => {
       particles.current = [];
       const count = 40;
       for (let i = 0; i < count; i++) {
+        const angle = (Math.PI * 2 * i) / count;
         particles.current.push({
-          angle: (Math.PI * 2 * i) / count,
+          angle,
           distance: 0,
-          baseDistance: 20 + Math.random() * 30,
+          baseDistance: 10 + Math.random() * 15,
           size: 1 + Math.random() * 2.5,
-          speed: 0.2 + Math.random() * 0.3,
+          speed: 0.02 + Math.random() * 0.03,
           offset: Math.random() * Math.PI * 2,
           pulsePhase: Math.random() * Math.PI * 2,
           opacity: 0.3 + Math.random() * 0.7,
