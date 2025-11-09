@@ -60,7 +60,7 @@ export default function Realisations() {
         />
 
         <div className="flex flex-col h-full pt-14 pb-32">
-          <div className="max-w-6xl mx-auto w-full px-8">
+          <div className="max-w-7xl mx-auto w-full px-8">
             <Navbar />
           </div>
 

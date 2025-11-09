@@ -1,17 +1,9 @@
-"use client";
 import Navbar from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import GradientText from "@/components/GradientText";
-import useNavigate from "@/hooks/useNavigate";
 
 export default function Hero() {
-  const navigation = useNavigate();
-
-  const handleProjectClick = () => {
-    navigation("/projects");
-  };
-
   return (
     <div className="relative min-h-screen h-screen scale-y-105 overflow-hidden">
       <Image
@@ -23,9 +15,14 @@ export default function Hero() {
       />
 
       <div className="flex flex-col h-full relative z-10">
-        <Navbar />
-        <div className="flex-1 flex flex-col justify-center mt-24 pb-20 md:pb-40">
-          <div className="max-w-6xl mx-auto w-full px-8">
+        <div className="pt-8 md:pt-14 pb-8">
+          <div className="max-w-6xl mx-auto w-full px-4">
+            <Navbar />
+          </div>
+        </div>
+
+        <div className="flex-1 flex flex-col justify-center pb-20 md:pb-40">
+          <div className="max-w-6xl mx-auto w-full px-4">
             <div className="flex flex-col items-center max-w-full lg:max-w-4/5 mx-auto justify-center">
               <GradientText
                 colors={["#D1DDFF", "#7B9EFF", "white"]}
@@ -49,8 +46,7 @@ export default function Hero() {
                   Découvrir nos formations
                 </Button>
                 <Button
-                  onClick={handleProjectClick}
-                  className="border border-white text-white rounded-full cursor-pointer text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-12 sm:w-auto transition-all duration-300 group hover:opacity-90 w-full"
+                  className="border border-white text-white rounded-full cursor-pointer text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-8 w-full sm:w-auto"
                   style={{
                     background:
                       "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",

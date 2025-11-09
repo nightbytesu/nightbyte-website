@@ -40,12 +40,14 @@ export default function Footer() {
                     </a>
                     <a
                       href="https://www.instagram.com/nightbyte.su/"
+                      target="_blank"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Instagram className="w-4 h-4" />
                     </a>
                     <a
                       href="https://www.linkedin.com/company/nightbyte/"
+                      target="_blank"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Linkedin className="w-4 h-4" />

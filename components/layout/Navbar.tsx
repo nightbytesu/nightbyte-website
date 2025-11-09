@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
 import GooeyNav from "../GooeyNav";
 import useNavigate from "@/hooks/useNavigate";
@@ -19,17 +19,6 @@ const items = [
 export default function Navbar() {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleLogoClick = () => {
     navigate("/");
@@ -61,36 +50,14 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav
-        className={`h-16 md:h-20 px-6 md:px-12 lg:px-16 flex justify-between items-center rounded-full transition-all duration-300 ease-out ${
-          isScrolled
-            ? "bg-[rgba(65,113,249,0.15)] backdrop-blur-xl border border-[rgba(255,255,255,0.1)] shadow-[0_8px_32px_0_rgba(65,113,249,0.2)] w-[95%] max-w-7xl"
-            : "bg-[rgba(65,113,249,0.08)] backdrop-blur-md border border-[rgba(255,255,255,0.05)] shadow-[0_4px_16px_0_rgba(65,113,249,0.1)] w-[90%] max-w-6xl"
-        }`}
-        style={{
-          position: "fixed",
-          top: "1rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 9999,
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          width: isScrolled ? "95%" : "90%",
-          maxWidth: isScrolled ? "80rem" : "72rem",
-        }}
-      >
-        <button
-          className="cursor-pointer transition-transform duration-300 hover:scale-105"
-          onClick={handleLogoClick}
-        >
+      <nav className="h-20 px-4 md:px-16 flex justify-between items-center bg-[#4171F92B] rounded-full">
+        <button className="cursor-pointer" onClick={handleLogoClick}>
           <Image
             src="/assets/nightbyte-logo.png"
             width={140}
             height={60}
             alt="Nightbyte"
-            className={`h-auto transition-all duration-300 ${
-              isScrolled ? "w-20 md:w-28" : "w-24 md:w-[140px]"
-            }`}
+            className="w-24 h-auto md:w-[140px]"
           />
         </button>
 
@@ -108,13 +75,10 @@ export default function Navbar() {
           />
         </div>
 
+        {/* Desktop Contact Button */}
         <Button
           onClick={handleContactClick}
-          className={`border border-white/30 text-white rounded-full cursor-pointer transition-all duration-300 group hover:scale-105 hover:border-white/50 hover:shadow-[0_0_20px_rgba(65,113,249,0.5)] ${
-            isScrolled
-              ? "text-sm md:text-base lg:text-lg h-9 md:h-11 px-5 md:px-7"
-              : "text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-8"
-          } w-full sm:w-auto`}
+          className="hidden md:flex border border-white text-white rounded-full w-30 cursor-pointer py-5"
           style={{
             background:
               "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",
@@ -122,6 +86,7 @@ export default function Navbar() {
         >
           Contactez-nous
         </Button>
+
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
@@ -216,7 +181,7 @@ export default function Navbar() {
                 <button
                   key={index}
                   onClick={() => handleMobileNavClick(item.href)}
-                  className={`block w-full text-left text-white hover:text-blue-400 transition-all duration-400 py-3 px-8 rounded-lg hover:bg-slate-800 transform ${
+                  className={`block w-full text-left text-white hover:text-blue-400 transition-all duration-400 py-3 px-4 rounded-lg hover:bg-slate-800 transform ${
                     isMobileMenuOpen
                       ? "translate-x-0 opacity-100 translate-y-0 scale-100"
                       : "translate-x-12 opacity-0 translate-y-4 scale-95"

@@ -72,7 +72,7 @@ export default function RootLayout({
       <body className={`${author.className} antialiased`}>
         <SpaceCursor />
         {children}
-        <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-8">
           <Footer />
         </div>
       </body>

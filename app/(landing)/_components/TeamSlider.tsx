@@ -22,7 +22,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
   const swiperRef = useRef<SwiperRef>(null);
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-8">
+    <div className="w-full max-w-7xl mx-auto px-8">
       <div className="relative flex items-center justify-center">
         <button
           onClick={() => swiperRef.current?.swiper?.slidePrev()}

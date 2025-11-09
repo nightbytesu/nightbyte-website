@@ -23,6 +23,12 @@ const teamMembers = [
   },
   {
     id: 4,
+    name: "Maria BEZZAZ",
+    role: "UI/UX Designer & Graphic Designer",
+    image: "/assets/teams/maria.png",
+  },
+  {
+    id: 5,
     name: "Akram Samir OUNIS",
     role: "Chef du département IA",
     image: "/assets/teams/akramo.JPG",
@@ -47,7 +53,7 @@ export default function Team() {
       <p className="text-base md:text-lg text-center">
         Des talents unis par la passion tech.
       </p>
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-7xl">
         <TeamSlider teamMembers={teamMembers} />
       </div>
     </div>
