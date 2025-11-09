@@ -29,15 +29,19 @@ export default function Contact() {
       </div>
 
       <div className="flex flex-col min-h-screen relative z-10">
-        <Navbar />
+        <div className="pt-14 pb-42">
+          <div className="max-w-6xl mx-auto w-full px-4">
+            <Navbar />
+          </div>
+        </div>
 
         <div className="flex-1 flex items-center justify-center pb-42">
-          <div className="max-w-7xl mx-auto w-full px-4">
+          <div className="max-w-6xl mx-auto w-full px-4">
             <ContactForm />
           </div>
         </div>
         <div className="pb-32">
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-6xl mx-auto px-4">
             <CallToAction />
           </div>
         </div>
