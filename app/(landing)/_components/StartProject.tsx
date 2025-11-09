@@ -24,7 +24,7 @@ export default function StartProject() {
             width={0}
             height={0}
             sizes="100vw"
-            src="/assets/rocket.png"
+            src="/assets/rocket.PNG"
             alt="Rocket"
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">

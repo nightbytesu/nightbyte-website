@@ -79,7 +79,7 @@ export default function About() {
                   sizes="100vw"
                   // L'Image Next.js doit être enfant du motion.div
                   className="w-full h-full object-contain"
-                  src="/assets/rocket.png"
+                  src="/assets/rocket.PNG"
                   alt="Rocket"
                 />
               </motion.div>
