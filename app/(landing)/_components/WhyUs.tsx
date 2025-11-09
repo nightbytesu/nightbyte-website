@@ -6,14 +6,14 @@ const whyUs: WhyUsItemProps[] = [
   {
     id: 1,
     title: "Une équipe élite, sélectionnée selon l’expertise",
-    icons: ["/assets/brands/slack.svg"],
+    icons: ["/assets/brands/magnifier.svg"],
   },
   {
     id: 2,
     title: "Un workflow agile soutenu par Notion, ClickUp, Slack",
     icons: [
-      "/assets/brands/slack.svg",
-      "/assets/brands/slack.svg",
+      "/assets/brands/notion.svg",
+      "/assets/brands/clickup.svg",
       "/assets/brands/slack.svg",
     ],
   },
@@ -22,49 +22,49 @@ const whyUs: WhyUsItemProps[] = [
     title:
       "Des technologies modernes et scalables (React, Flutter, Python, OpenAI)",
     icons: [
-      "/assets/brands/slack.svg",
-      "/assets/brands/slack.svg",
-      "/assets/brands/slack.svg",
-      "/assets/brands/slack.svg",
-      "/assets/brands/slack.svg",
+      "/assets/brands/react.svg",
+      "/assets/brands/flutter.svg",
+      "/assets/brands/python.svg",
+      "/assets/brands/openai.svg",
+      "/assets/brands/nextjs.svg",
     ],
   },
   {
     id: 4,
     title: "Une approche 100% personnalisée à l’objectif client",
-    icons: ["/assets/brands/slack.svg"],
+    icons: ["/assets/brands/cloud.svg"],
   },
   {
     id: 5,
     title: "Un accompagnement complet : du concept à la mise en ligne",
-    icons: ["/assets/brands/slack.svg"],
+    icons: ["/assets/brands/shield.svg"],
   },
 ];
 
 export default function WhyUs() {
   return (
-    <div className="space-y-6 mb-10 flex flex-col items-center justify-center">
-
+    <div
+      id="pourquoi-nous"
+      className="space-y-4 md:space-y-6 mb-8 md:mb-10 flex flex-col items-center justify-center px-8"
+    >
       <GradientText
-        colors={["#D1DDFF", '#7B9EFF', 'white']}
+        colors={["#D1DDFF", "#7B9EFF", "white"]}
         showBorder={false}
-        className='text-5xl font-medium'
-        textClassName='pb-3'
+        className="text-3xl md:text-4xl lg:text-5xl font-medium text-center"
+        textClassName="pb-3"
       >
         Pourquoi choisir NightByte ?
       </GradientText>
-      <p className="text-lg">
+      <p className="text-base md:text-lg text-center">
         Une approche innovante, des résultats concrets.
       </p>
 
       <Timeline>
-        {whyUs.map((why, i) =>
-          <TimelineItem
-            key={why.id}
-            side={i % 2 === 0 ? 'left' : 'right'}>
+        {whyUs.map((why, i) => (
+          <TimelineItem key={why.id} side={i % 2 === 0 ? "left" : "right"}>
             <WhyUsItem {...why} />
-          </TimelineItem>)
-        }
+          </TimelineItem>
+        ))}
       </Timeline>
     </div>
   );
