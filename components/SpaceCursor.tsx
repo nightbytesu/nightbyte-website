@@ -109,7 +109,7 @@ const SpaceCursor = () => {
         ctx.beginPath();
         ctx.arc(trailX, trailY, 3 - t * 0.3, 0, Math.PI * 2);
         ctx.fillStyle = isHovering.current
-          ? `rgba(255, 100, 200, ${trailAlpha})`
+          ? `rgba(255, 50, 50, ${trailAlpha})`
           : `rgba(150, 200, 255, ${trailAlpha})`;
         ctx.fill();
       }
@@ -140,10 +140,10 @@ const SpaceCursor = () => {
         const gradient = ctx.createRadialGradient(x, y, 0, x, y, p.size * 4);
 
         if (isHovering.current) {
-          // Couleurs magenta/rose cosmique
-          gradient.addColorStop(0, `rgba(255, 100, 200, ${p.opacity})`);
-          gradient.addColorStop(0.5, `rgba(200, 50, 150, ${p.opacity * 0.5})`);
-          gradient.addColorStop(1, "rgba(255, 100, 200, 0)");
+          // Couleurs rouge cosmique
+          gradient.addColorStop(0, `rgba(50, 50, 255, ${p.opacity})`);
+          gradient.addColorStop(0.5, `rgba(50, 50, 255, ${p.opacity * 0.5})`);
+          gradient.addColorStop(1, "rgba(50, 50, 255, 0)");
         } else {
           // Couleurs blanc froid/bleu
           gradient.addColorStop(0, `rgba(200, 220, 255, ${p.opacity})`);
@@ -160,7 +160,7 @@ const SpaceCursor = () => {
         ctx.beginPath();
         ctx.arc(x, y, p.size * 0.5, 0, Math.PI * 2);
         ctx.fillStyle = isHovering.current
-          ? `rgba(255, 150, 220, ${p.opacity})`
+          ? `rgba(100, 100, 255, ${p.opacity})`
           : `rgba(255, 255, 255, ${p.opacity})`;
         ctx.fill();
 
@@ -184,7 +184,7 @@ const SpaceCursor = () => {
             ctx.moveTo(x, y);
             ctx.lineTo(nextX, nextY);
             ctx.strokeStyle = isHovering.current
-              ? `rgba(255, 100, 200, ${0.15 * (1 - dist / 60)})`
+              ? `rgba(255, 50, 50, ${0.15 * (1 - dist / 60)})`
               : `rgba(150, 200, 255, ${0.1 * (1 - dist / 60)})`;
             ctx.lineWidth = 1;
             ctx.stroke();
@@ -202,9 +202,9 @@ const SpaceCursor = () => {
         12
       );
       if (isHovering.current) {
-        coreGradient.addColorStop(0, "rgba(255, 150, 220, 0.8)");
-        coreGradient.addColorStop(0.3, "rgba(255, 100, 200, 0.4)");
-        coreGradient.addColorStop(1, "rgba(255, 100, 200, 0)");
+        coreGradient.addColorStop(0, "rgba(100, 100, 255, 0.8)");
+        coreGradient.addColorStop(0.3, "rgba(50, 50, 255, 0.4)");
+        coreGradient.addColorStop(1, "rgba(50, 50, 255, 0)");
       } else {
         coreGradient.addColorStop(0, "rgba(255, 255, 255, 0.6)");
         coreGradient.addColorStop(0.3, "rgba(200, 220, 255, 0.3)");
@@ -236,15 +236,6 @@ const SpaceCursor = () => {
       <style>{`
         * {
           cursor: none !important;
-        }
-        
-        body {
-          margin: 0;
-          padding: 0;
-          background: #0a0a0f;
-          color: #fff;
-          font-family: 'Arial', sans-serif;
-          overflow-x: hidden;
         }
         
         #cosmic-canvas {

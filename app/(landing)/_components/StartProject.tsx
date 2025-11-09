@@ -18,7 +18,7 @@ export default function StartProject() {
           Que vous souhaitiez lancer une marque, créer un produit digital ou
           monter en compétences, NightByte est votre partenaire de croissance.
         </p>
-        <div className="relative py-16 md:py-24 lg:py-32 max-w-full lg:max-w-3/4 mx-auto">
+        <div className="relative hover:scale-120 transition-all py-16 md:py-24 lg:py-32 max-w-full lg:max-w-3/4 mx-auto">
           <Image
             className="absolute -z-10 top-0 left-0 w-full h-full"
             width={0}

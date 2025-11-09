@@ -6,7 +6,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 1,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/pen.svg",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
     className: "flex-3",
@@ -14,7 +14,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 2,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/web.svg",
     description:
       "Création de sites vitrines, e-commerce, plateformes sur mesure, apps React/Next.js, Flutter & PWA.",
     className: "flex-4",
@@ -22,7 +22,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 3,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/camera.svg",
     description:
       "Montage professionnel, animations, vidéos publicitaires et storytelling visuel.",
     className: "flex-8",
@@ -30,7 +30,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 4,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/ux.svg",
     description:
       "Conception d’interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
     className: "flex-7",
@@ -38,14 +38,14 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 5,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/course.svg",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
   },
   {
     id: 6,
     title: "Design Graphique & Branding",
-    icon: "/assets/pen.svg",
+    icon: "/assets/expertise/ai.svg",
     description:
       "Chatbots, IA générative, automatisations no-code (n8n), intégrations Python & API.",
   },
@@ -63,7 +63,7 @@ export default function Expertise() {
               className={`w-full ${item.className}`}
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
-              <ExpertiseItem {...item} className="" />
+              <ExpertiseItem {...item} className="bg-white" />
             </SpotlightCard>
           ))}
         </div>
@@ -110,10 +110,10 @@ export default function Expertise() {
           className="text-3xl md:text-4xl lg:text-5xl font-medium text-center"
           textClassName="pb-3"
         >
-          Nos pôles d'expertise
+          Nos pôles d&apos;expertise
         </GradientText>
         <p className="text-base md:text-lg text-center">
-          Des solutions digitales pensées pour l'impact.
+          Des solutions digitales pensées pour l&apos;impact.
         </p>
       </div>
 

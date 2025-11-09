@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import GooeyNav from "../GooeyNav";
 import useNavigate from "@/hooks/useNavigate";
@@ -19,6 +19,17 @@ const items = [
 export default function Navbar() {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleLogoClick = () => {
     navigate("/");
@@ -50,14 +61,36 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="h-20 px-8 md:px-16 flex justify-between items-center bg-[#4171F92B] rounded-full">
-        <button className="cursor-pointer" onClick={handleLogoClick}>
+      <nav
+        className={`h-16 md:h-20 px-6 md:px-12 lg:px-16 flex justify-between items-center rounded-full transition-all duration-300 ease-out ${
+          isScrolled
+            ? "bg-[rgba(65,113,249,0.15)] backdrop-blur-xl border border-[rgba(255,255,255,0.1)] shadow-[0_8px_32px_0_rgba(65,113,249,0.2)] w-[95%] max-w-7xl"
+            : "bg-[rgba(65,113,249,0.08)] backdrop-blur-md border border-[rgba(255,255,255,0.05)] shadow-[0_4px_16px_0_rgba(65,113,249,0.1)] w-[90%] max-w-6xl"
+        }`}
+        style={{
+          position: "fixed",
+          top: "1rem",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 9999,
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          width: isScrolled ? "95%" : "90%",
+          maxWidth: isScrolled ? "80rem" : "72rem",
+        }}
+      >
+        <button
+          className="cursor-pointer transition-transform duration-300 hover:scale-105"
+          onClick={handleLogoClick}
+        >
           <Image
             src="/assets/nightbyte-logo.png"
             width={140}
             height={60}
             alt="Nightbyte"
-            className="w-24 h-auto md:w-[140px]"
+            className={`h-auto transition-all duration-300 ${
+              isScrolled ? "w-20 md:w-28" : "w-24 md:w-[140px]"
+            }`}
           />
         </button>
 
@@ -77,7 +110,11 @@ export default function Navbar() {
 
         <Button
           onClick={handleContactClick}
-          className="border border-white text-white rounded-full cursor-pointer text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-8 w-full sm:w-auto transition-all duration-300 group hover:opacity-90"
+          className={`border border-white/30 text-white rounded-full cursor-pointer transition-all duration-300 group hover:scale-105 hover:border-white/50 hover:shadow-[0_0_20px_rgba(65,113,249,0.5)] ${
+            isScrolled
+              ? "text-sm md:text-base lg:text-lg h-9 md:h-11 px-5 md:px-7"
+              : "text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-8"
+          } w-full sm:w-auto`}
           style={{
             background:
               "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",

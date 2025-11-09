@@ -17,7 +17,7 @@ export default function Landing() {
           alt="Left Background"
           src="/assets/contact/left-background.svg"
           fill
-          className="object-contain"
+          className="object-contain -z-100 opacity-40"
         />
       </div>
 
@@ -26,7 +26,7 @@ export default function Landing() {
           alt="Right Background"
           src="/assets/contact/right-background.svg"
           fill
-          className="object-contain"
+          className="object-contain -z-100 opacity-40"
         />
       </div>
       <div>
@@ -36,7 +36,7 @@ export default function Landing() {
         <About />
       </div>
       <div className="relative">
-        <div className="max-w-6xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8">
+        <div className="max-w-6xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8 z-200">
           <Expertise />
         </div>
         <BackgroundEffect translateY="-25%" translateX="-50%" left="50%" />

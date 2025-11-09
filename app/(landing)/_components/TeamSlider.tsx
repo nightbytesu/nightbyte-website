@@ -68,8 +68,8 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={150}
-                    height={150}
+                    width={200}
+                    height={200}
                     className="object-cover relative rounded-2xl"
                     style={{
                       boxShadow: "rgba(65,113,249, 0.4) 0px 0px 0px 5px",

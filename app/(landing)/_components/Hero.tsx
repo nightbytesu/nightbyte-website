@@ -23,11 +23,7 @@ export default function Hero() {
       />
 
       <div className="flex flex-col h-full relative z-10">
-        <div className="pt-8 md:pt-14 pb-8">
-          <div className="max-w-6xl mx-auto w-full px-8">
-            <Navbar />
-          </div>
-        </div>
+        <Navbar />
         <div className="flex-1 flex flex-col justify-center mt-24 pb-20 md:pb-40">
           <div className="max-w-6xl mx-auto w-full px-8">
             <div className="flex flex-col items-center max-w-full lg:max-w-4/5 mx-auto justify-center">

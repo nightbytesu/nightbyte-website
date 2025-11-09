@@ -5,21 +5,27 @@ import GradientText from "@/components/GradientText";
 const teamMembers = [
   {
     id: 1,
-    name: "Caliphe Musulman",
+    name: "Amine DJENKAL",
     role: "Fondateur & CEO",
-    image: "/assets/teams/ramzyk.png",
+    image: "/assets/teams/amined.jpg",
   },
   {
     id: 2,
-    name: "Ramzy Kemmoun",
-    role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/ramzyk.png",
+    name: "Ramzy KEMMOUN",
+    role: "Responsable Technique",
+    image: "/assets/teams/ramzyk.jpg",
   },
   {
     id: 3,
-    name: "Eren Yeager",
+    name: "Azeddine AMRAOUI",
     role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/ramzyk.png",
+    image: "/assets/teams/azzedinea.jpg",
+  },
+  {
+    id: 4,
+    name: "Akram Samir OUNIS",
+    role: "Chef du département IA",
+    image: "/assets/teams/akramo.JPG",
   },
 ];
 

@@ -10,7 +10,7 @@ interface TimelineItemProps {
 
 export function TimelineItem({ children, side = "left" }: TimelineItemProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.3 });
 
   return (
     <motion.div
@@ -97,7 +97,7 @@ export function Timeline({ children }: TimelineProps) {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ margin: "-50px" }}
                 className="relative h-3 w-3 md:h-4 md:w-4 rounded-full border-2 border-[#4171F9] bg-[#4171F9] shadow-blue-500/50"
               >
                 <motion.div
