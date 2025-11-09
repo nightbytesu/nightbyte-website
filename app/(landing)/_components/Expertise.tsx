@@ -1,6 +1,7 @@
 import SpotlightCard from "@/components/SpotlightCard";
 import ExpertiseItem, { ExpertiseItemProps } from "./ExpertiseItem";
 import GradientText from "@/components/GradientText";
+import { cn } from "@/lib/utils";
 
 const expertises: Array<ExpertiseItemProps> = [
   {
@@ -32,13 +33,14 @@ const expertises: Array<ExpertiseItemProps> = [
     title: "Design Graphique & Branding",
     icon: "/assets/expertise/ux.svg",
     description:
-      "Conception d’interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
+      "Conception d'interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
     className: "flex-7",
   },
   {
     id: 5,
     title: "Design Graphique & Branding",
     icon: "/assets/expertise/course.svg",
+    className: "flex-1",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
   },
@@ -46,6 +48,7 @@ const expertises: Array<ExpertiseItemProps> = [
     id: 6,
     title: "Design Graphique & Branding",
     icon: "/assets/expertise/ai.svg",
+    className: "flex-1",
     description:
       "Chatbots, IA générative, automatisations no-code (n8n), intégrations Python & API.",
   },
@@ -76,7 +79,7 @@ export default function Expertise() {
               const [first, second] = [items[i], items[i + 1]];
               pairs.push(
                 <div
-                  className="flex gap-2 h-full"
+                  className="flex gap-2 h-full w-full"
                   key={first.id + "-" + second.id}
                 >
                   <SpotlightCard
@@ -86,7 +89,7 @@ export default function Expertise() {
                     <ExpertiseItem {...first} className="" key={first.id} />
                   </SpotlightCard>
                   <SpotlightCard
-                    className={second.className}
+                    className={cn(second.className, "w-full")}
                     spotlightColor="rgba(0, 229, 255, 0.2)"
                   >
                     <ExpertiseItem {...second} className="" key={second.id} />

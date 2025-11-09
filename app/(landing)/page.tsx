@@ -42,13 +42,12 @@ export default function Landing() {
         <BackgroundEffect translateY="-25%" translateX="-50%" left="50%" />
       </div>
 
-      <div className="max-w-7xl mx-auto mb-40"></div>
+      <AnimatedCommet />
 
       <div className="relative">
         <div className="max-w-7xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8">
           <WhyUs />
         </div>
-        <AnimatedCommet />
         <BackgroundEffect translateX="-50%" left="50%" />
         <BackgroundEffect translateX="-50%" top="100%" left="50%" />
       </div>

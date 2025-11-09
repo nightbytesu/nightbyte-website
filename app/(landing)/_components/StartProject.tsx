@@ -25,7 +25,7 @@ export default function StartProject() {
             height={0}
             sizes="100vw"
             unoptimized={true}
-            src="/assets/rocket.png"
+            src="/assets/rocket.svg"
             alt="Rocket"
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">

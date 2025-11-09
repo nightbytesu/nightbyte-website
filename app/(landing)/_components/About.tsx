@@ -78,7 +78,7 @@ export default function About() {
                   height={0}
                   sizes="100vw"
                   className="w-full h-full object-contain"
-                  src="/assets/rocket.png"
+                  src="/assets/rocket.svg"
                   alt="Rocket"
                   unoptimized={true}
                 />

@@ -46,7 +46,7 @@ export default function Target() {
               width={0}
               height={0}
               sizes="100vw"
-              className="w-auto scale-600 h-48 md:h-64 lg:h-72 object-contain"
+              className="w-auto scale-100 h-48 md:h-64 lg:h-72 object-contain"
               style={{
                 filter: "drop-shadow(0 0 10px rgba(255,255,255,0.1))",
               }}
