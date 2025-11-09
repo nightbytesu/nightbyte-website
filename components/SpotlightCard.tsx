@@ -1,5 +1,5 @@
-'use client'
-import React, { useRef, useState } from 'react';
+"use client";
+import React, { useRef, useState } from "react";
 
 interface Position {
   x: number;
@@ -13,15 +13,15 @@ interface SpotlightCardProps extends React.PropsWithChildren {
 
 const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
-  className = '',
-  spotlightColor = 'rgba(255, 255, 255, 0.25)'
+  className = "",
+  spotlightColor = "rgba(255, 255, 255, 0.25)",
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState<number>(0);
 
-  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = e => {
+  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (!divRef.current || isFocused) return;
 
     const rect = divRef.current.getBoundingClientRect();
@@ -54,13 +54,13 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative overflow-hidden h-full ${className}`}
+      className={`relative overflow-hidden h-full bg-[#090013] ${className}`}
     >
       <div
         className="pointer-events-none rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
         style={{
           opacity,
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`
+          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
         }}
       />
       {children}
