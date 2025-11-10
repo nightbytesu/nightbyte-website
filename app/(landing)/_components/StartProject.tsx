@@ -51,7 +51,9 @@ export default function StartProject() {
                 className="cursor-pointer relative w-full rounded-full py-2 px-8 text-white/90 font-semibold text-base md:text-lg bg-linear-to-b from-[#6e7eea] to-[#4956b8] border border-[#a3b3ff]/30 shadow-inner shadow-[#1e1e4a]/40 hover:shadow-[inset_0_0_10px_rgba(255,255,255,0.3)] transition-all duration-300 overflow-hidden"
               >
                 <span className="absolute inset-px rounded-full opacity-70"></span>
-                <span className="relative z-10">Rejoindre Une Formation</span>
+                <span className="relative z-10 whitespace-nowrap">
+                  Rejoindre Une Formation
+                </span>
               </button>
             </div>
           </div>

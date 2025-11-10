@@ -66,7 +66,7 @@ export default function Expertise() {
               className={`w-full ${item.className}`}
               spotlightColor="rgba(0, 229, 255, 0.2)"
             >
-              <ExpertiseItem {...item} className="bg-white" />
+              <ExpertiseItem {...item} />
             </SpotlightCard>
           ))}
         </div>

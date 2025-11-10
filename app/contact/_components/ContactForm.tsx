@@ -38,7 +38,6 @@ export default function ContactForm() {
       ...prev,
       [name]: value,
     }));
-    // Reset status when user starts typing again
     if (submitStatus !== "idle") {
       setSubmitStatus("idle");
     }
@@ -47,7 +46,6 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -58,7 +56,6 @@ export default function ContactForm() {
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setErrorMessage("Veuillez entrer une adresse email valide.");
@@ -81,7 +78,6 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        // Reset form
         setFormData({
           name: "",
           phone: "",
@@ -118,7 +114,6 @@ export default function ContactForm() {
         </p>
       </div>
       <div className="w-full p-12 grid grid-cols-1 lg:grid-cols-2 gap-30">
-        {/* Left Side - Form */}
         <div className="h-full">
           <form
             onSubmit={handleSubmit}
@@ -196,7 +191,7 @@ export default function ContactForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="border border-white text-white rounded-full cursor-pointer text-xl h-12 w-40 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="border border-white text-white rounded-full cursor-pointer text-xl h-12 w-full md:w-40 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 background: isSubmitting
                   ? "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)"
