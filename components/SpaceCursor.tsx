@@ -1,4 +1,5 @@
 "use client";
+import { useMobile } from "@/hooks/useMobile";
 import React, { useEffect, useRef } from "react";
 
 interface Particle {
@@ -24,7 +25,6 @@ const SpaceCursor = () => {
     const canvas = canvasRef.current as HTMLCanvasElement;
     const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
 
-    // Configuration du canvas
     const updateCanvasSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -32,7 +32,6 @@ const SpaceCursor = () => {
     updateCanvasSize();
     window.addEventListener("resize", updateCanvasSize);
 
-    // Initialisation des particules
     const initParticles = () => {
       particles.current = [];
       const count = 40;
@@ -51,36 +50,25 @@ const SpaceCursor = () => {
       }
     };
     initParticles();
-    // Gère l'erreur TypeScript et la position
     const handleMouseMove = (e: MouseEvent) => {
-      // TypeScript sait maintenant que 'e' a clientX et clientY.
       mousePos.current = { x: e.clientX, y: e.clientY };
     };
 
-    // Gère l'erreur TypeScript et optimise la détection de survol
-    // On utilise MouseEvent pour les événements du DOM
     const handleMouseOver = (e: MouseEvent) => {
-      // On s'assure que la cible est un HTMLElement pour utiliser 'closest'
       const target = e.target as HTMLElement;
 
-      // Utiliser 'closest' est la méthode la plus efficace et propre.
-      // Elle remonte l'arbre DOM pour vérifier si la cible ou un parent correspond au sélecteur.
       const isInteractive = target.closest(
         'a, button, [data-cursor-pointer], input[type="submit"]'
       );
-
-      // Mettre à jour la référence
       isHovering.current = !!isInteractive;
     };
-
-    // Si tu dois gérer le 'mouseout' pour remettre isHovering à false, il te faudra
-    // une autre fonction 'handleMouseOut' utilisant la même logique de détection inversée.
 
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseover", handleMouseOver);
 
     // Animation
-    let time = 0;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let time: number = 0;
     const animate = () => {
       time += 0.016;
 
@@ -230,6 +218,10 @@ const SpaceCursor = () => {
       }
     };
   }, []);
+
+  const mobile = useMobile();
+
+  if (mobile) return null;
 
   return (
     <>

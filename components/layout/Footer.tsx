@@ -20,7 +20,7 @@ export default function Footer() {
                   CONTACT US
                 </h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm">(+216) 66457346</p>
+                  <p className="text-gray-300 text-sm">(+213) 773141761</p>
                   <p className="text-gray-300 text-sm">nightbyte@gmail.com</p>
                 </div>
               </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                 <div className="flex space-x-3">
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/share/1BUSR1QLJe/"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Facebook className="w-4 h-4" />
