@@ -58,6 +58,7 @@ export default function Navbar() {
             height={60}
             alt="Nightbyte"
             className="w-24 h-auto md:w-[140px]"
+            priority
           />
         </button>
 
@@ -151,9 +152,9 @@ export default function Navbar() {
               <Image
                 src="/assets/nightbyte-logo.svg"
                 width={120}
-                unoptimized={true}
                 height={50}
                 alt="Nightbyte"
+                priority
               />
               <button
                 onClick={toggleMobileMenu}

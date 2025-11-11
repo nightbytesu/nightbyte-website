@@ -26,6 +26,7 @@ export default function StartProject() {
             sizes="100vw"
             src="/assets/rocket.svg"
             alt="Rocket"
+            priority
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">
             <div className="flex flex-col space-y-4 max-w-full md:max-w-sm mx-auto mt-6 md:mt-10 px-8 md:px-0">
