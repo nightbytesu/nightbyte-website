@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, Variants } from "motion/react";
 
-import RocketImage from "../../../public/assets/rocket.png"
+import RocketImage from "../../../public/assets/rocket.svg"
 
 export default function About() {
   const [isHovered, setIsHovered] = useState(false);

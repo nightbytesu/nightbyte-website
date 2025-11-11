@@ -20,8 +20,8 @@ export default function Footer() {
                   CONTACT US
                 </h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm">(+216) 66457346</p>
-                  <p className="text-gray-300 text-sm">nightbyte@gmail.com</p>
+                  <p className="text-gray-300 text-sm">(+213) 773 14 17 61</p>
+                  <p className="text-gray-300 text-sm">contact@nightbyte.space</p>
                 </div>
               </div>
 

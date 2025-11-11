@@ -2,7 +2,7 @@ import GradientText from "@/components/GradientText";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-import RocketImage from "../../../public/assets/rocket.png"
+import RocketImage from "../../../public/assets/rocket.svg"
 
 export default function StartProject() {
   return (

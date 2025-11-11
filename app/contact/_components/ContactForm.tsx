@@ -226,7 +226,7 @@ export default function ContactForm() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-blue-400 w-5 h-5" />
-                <span className="text-gray-300">+213 755422894</span>
+                <span className="text-gray-300">+213 773 14 17 61</span>
               </div>
               <p className="text-gray-400 text-sm mt-4">
                 Nous répondons sous 24h.
