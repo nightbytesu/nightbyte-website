@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "aceternity.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+        port: "",
+      },
     ],
   },
 };

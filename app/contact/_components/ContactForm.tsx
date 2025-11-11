@@ -222,7 +222,7 @@ export default function ContactForm() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-400 w-5 h-5" />
-                <span className="text-gray-300">nightbytesu@gmail.com</span>
+                <span className="text-gray-300">contact@nightbyte.space</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="text-blue-400 w-5 h-5" />

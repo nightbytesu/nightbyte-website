@@ -55,7 +55,6 @@ export default function Navbar() {
           <Image
             src="/assets/nightbyte-logo.svg"
             width={140}
-            unoptimized={true}
             height={60}
             alt="Nightbyte"
             className="w-24 h-auto md:w-[140px]"

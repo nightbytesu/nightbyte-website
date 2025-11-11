@@ -80,7 +80,6 @@ export default function About() {
                   className="w-full h-full object-contain"
                   src="/assets/rocket.svg"
                   alt="Rocket"
-                  unoptimized={true}
                 />
               </motion.div>
             </div>

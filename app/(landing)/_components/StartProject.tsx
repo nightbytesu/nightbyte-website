@@ -24,7 +24,6 @@ export default function StartProject() {
             width={0}
             height={0}
             sizes="100vw"
-            unoptimized={true}
             src="/assets/rocket.svg"
             alt="Rocket"
           />
