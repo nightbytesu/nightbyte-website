@@ -43,12 +43,12 @@ export default function BackgroundEffect({
         className="absolute"
       >
         <Image
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: "75%", height: "300px" }}
+          width={400}
+          height={400}
+          className="w-3/4 h-[300px] object-contain"
           src={src}
-          alt={src}
+          alt="background"
+          unoptimized
         />
       </div>
     );

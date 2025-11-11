@@ -42,13 +42,13 @@ export default function Target() {
             <Image
               src="/assets/earth.png"
               alt="Planet & Stars"
-              width={0}
-              height={0}
-              sizes="100vw"
+              width={400}
+              height={400}
               className="w-auto scale-600 h-48 md:h-64 lg:h-72 object-contain"
               style={{
                 filter: "drop-shadow(0 0 10px rgba(255,255,255,0.1))",
               }}
+              unoptimized
             />
           </div>
 

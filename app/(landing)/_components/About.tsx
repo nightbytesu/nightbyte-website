@@ -74,13 +74,13 @@ export default function About() {
                 variants={imageVariants}
               >
                 <Image
-                  width={0}
-                  height={0}
-                  sizes="100vw"
+                  width={400}
+                  height={400}
                   className="w-full h-full object-contain"
-                  src="/assets/rocket.svg"
+                  src="/assets/rocket.png"
                   alt="Rocket"
                   priority
+                  unoptimized
                 />
               </motion.div>
             </div>
