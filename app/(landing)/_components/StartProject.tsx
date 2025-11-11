@@ -2,6 +2,8 @@ import GradientText from "@/components/GradientText";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
+import RocketImage from "../../../public/assets/rocket.png"
+
 export default function StartProject() {
   return (
     <div className="mb-8 md:mb-10 flex flex-col items-center justify-center px-8">
@@ -23,7 +25,7 @@ export default function StartProject() {
             className="absolute -z-10 top-0 left-0 w-full h-full object-contain"
             width={800}
             height={800}
-            src="/assets/rocket.png"
+            src={RocketImage}
             alt="Rocket"
             priority
             unoptimized
