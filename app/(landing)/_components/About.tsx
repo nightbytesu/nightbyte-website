@@ -5,8 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, Variants } from "motion/react";
 
-import RocketImage from "../../../public/assets/rocket.svg"
-
 export default function About() {
   const [isHovered, setIsHovered] = useState(false);
   const imageVariants: Variants = {
@@ -79,10 +77,9 @@ export default function About() {
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
-                  src={RocketImage}
+                  src="/assets/rocket.png"
                   alt="Rocket"
                   priority
-                  unoptimized
                 />
               </motion.div>
             </div>
