@@ -57,6 +57,7 @@ export default function Realisations() {
           src="/assets/hero-bg.svg"
           alt="hero-bg"
           fill
+          unoptimized
         />
 
         <div className="flex flex-col h-full pt-14 pb-32">

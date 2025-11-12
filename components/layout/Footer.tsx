@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -20,8 +20,10 @@ export default function Footer() {
                   CONTACT US
                 </h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm">(+213) 773141761</p>
-                  <p className="text-gray-300 text-sm">nightbyte@gmail.com</p>
+                  <p className="text-gray-300 text-sm">(+213) 773 14 17 61</p>
+                  <p className="text-gray-300 text-sm">
+                    contact@nightbyte.space
+                  </p>
                 </div>
               </div>
 

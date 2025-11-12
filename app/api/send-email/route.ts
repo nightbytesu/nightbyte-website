@@ -27,16 +27,15 @@ export async function POST(request: NextRequest) {
     console.log('Creating transporter with user:', process.env.EMAIL_USER)
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: process.env.SMTP_SECURE === 'true',
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD, // Use app password for Gmail
+        pass: process.env.EMAIL_PASSWORD,
       },
       tls: {
         rejectUnauthorized: process.env.NODE_ENV === 'production',
-        ciphers: 'SSLv3',
       },
       connectionTimeout: 60000,
       greetingTimeout: 30000,
