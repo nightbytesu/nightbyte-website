@@ -149,7 +149,7 @@ export default function Navbar() {
               style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
             >
               <img
-                src="/static/nightbyte-logo.svg"
+                src="/static/nightbyte-logo.png"
                 width={120}
                 height={50}
                 alt="Nightbyte"

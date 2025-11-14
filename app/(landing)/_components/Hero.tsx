@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="relative min-h-screen h-screen scale-y-105 overflow-hidden">
       <Image
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="/static/hero-bg.svg"
+        src="/static/hero-bg.png"
         alt="hero-bg"
         fill
         priority

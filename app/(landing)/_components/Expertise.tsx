@@ -7,7 +7,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 1,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/pen.svg",
+    icon: "/static/expertise/pen.png",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
     className: "flex-3",
@@ -15,7 +15,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 2,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/web.svg",
+    icon: "/static/expertise/web.png",
     description:
       "Création de sites vitrines, e-commerce, plateformes sur mesure, apps React/Next.js, Flutter & PWA.",
     className: "flex-4",
@@ -23,7 +23,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 3,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/camera.svg",
+    icon: "/static/expertise/camera.png",
     description:
       "Montage professionnel, animations, vidéos publicitaires et storytelling visuel.",
     className: "flex-8",
@@ -31,7 +31,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 4,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/ux.svg",
+    icon: "/static/expertise/ux.png",
     description:
       "Conception d'interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
     className: "flex-7",
@@ -39,7 +39,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 5,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/course.svg",
+    icon: "/static/expertise/course.png",
     className: "flex-1",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
@@ -47,7 +47,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 6,
     title: "Design Graphique & Branding",
-    icon: "/static/expertise/ai.svg",
+    icon: "/static/expertise/ai.png",
     className: "flex-1",
     description:
       "Chatbots, IA générative, automatisations no-code (n8n), intégrations Python & API.",

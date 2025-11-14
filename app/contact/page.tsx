@@ -11,7 +11,7 @@ export default function Contact() {
       <div className="absolute left-0 top-0 w-1/2 h-full -z-10">
         <img
           alt="Left Background"
-          src="/static/contact/left-background.svg"
+          src="/static/contact/left-background.png"
           className="w-full h-full object-contain"
         />
       </div>
@@ -20,7 +20,7 @@ export default function Contact() {
       <div className="absolute right-0 top-0 w-1/2 h-full -z-10">
         <img
           alt="Right Background"
-          src="/static/contact/right-background.svg"
+          src="/static/contact/right-background.png"
           className="w-full h-full object-contain"
         />
       </div>
