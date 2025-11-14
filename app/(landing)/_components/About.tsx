@@ -77,7 +77,7 @@ export default function About() {
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
-                  src="/assets/static/rocket.png"
+                  src="/assets/rocket.png"
                   alt="Rocket"
                   priority
                 />
