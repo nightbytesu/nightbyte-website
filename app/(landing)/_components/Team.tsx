@@ -7,31 +7,31 @@ const teamMembers = [
     id: 1,
     name: "Amine DJENKAL",
     role: "Fondateur & CEO",
-    image: "/assets/teams/amined.jpg",
+    image: "/static/teams/amined.jpg",
   },
   {
     id: 2,
     name: "Ramzy KEMMOUN",
     role: "Responsable Technique",
-    image: "/assets/teams/ramzyk.jpg",
+    image: "/static/teams/ramzyk.jpg",
   },
   {
     id: 3,
     name: "Azeddine AMRAOUI",
     role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/azzedinea.jpg",
+    image: "/static/teams/azzedinea.jpg",
   },
   {
     id: 4,
     name: "Maria BEZZAZ",
     role: "UI/UX Designer & Graphic Designer",
-    image: "/assets/teams/maria.jpg",
+    image: "/static/teams/maria.jpg",
   },
   {
     id: 5,
     name: "Akram Samir OUNIS",
     role: "Chef du département IA",
-    image: "/assets/teams/akramo.JPG",
+    image: "/static/teams/akramo.JPG",
   },
 ];
 

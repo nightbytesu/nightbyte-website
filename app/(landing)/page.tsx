@@ -14,7 +14,7 @@ export default function Landing() {
       <div className="absolute left-0 top-0 w-1/2 h-full -z-10">
         <img
           alt="Left Background"
-          src="/assets/contact/left-background.svg"
+          src="/static/contact/left-background.svg"
           className="w-full h-full object-contain -z-100 opacity-40"
         />
       </div>
@@ -22,7 +22,7 @@ export default function Landing() {
       <div className="absolute right-0 top-0 w-1/2 h-full -z-10">
         <img
           alt="Right Background"
-          src="/assets/contact/right-background.svg"
+          src="/static/contact/right-background.svg"
           className="w-full h-full object-contain -z-100 opacity-40"
         />
       </div>
