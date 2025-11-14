@@ -7,26 +7,23 @@ import Target from "./_components/Target";
 import Team from "./_components/Team";
 import WhyUs from "./_components/WhyUs";
 import AnimatedCommet from "./_components/AnimatedCommet";
-import Image from "next/image";
 
 export default function Landing() {
   return (
     <div className="overflow-hidden relative">
       <div className="absolute left-0 top-0 w-1/2 h-full -z-10">
-        <Image
+        <img
           alt="Left Background"
           src="/assets/contact/left-background.svg"
-          fill
-          className="object-contain -z-100 opacity-40"
+          className="w-full h-full object-contain -z-100 opacity-40"
         />
       </div>
 
       <div className="absolute right-0 top-0 w-1/2 h-full -z-10">
-        <Image
+        <img
           alt="Right Background"
           src="/assets/contact/right-background.svg"
-          fill
-          className="object-contain -z-100 opacity-40"
+          className="w-full h-full object-contain -z-100 opacity-40"
         />
       </div>
       <div>

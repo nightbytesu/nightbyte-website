@@ -1,7 +1,6 @@
 "use client";
 import GradientText from "@/components/GradientText";
 import MagicBento from "@/components/MagicBento";
-import Image from "next/image";
 import { useState } from "react";
 import { motion, Variants } from "motion/react";
 
