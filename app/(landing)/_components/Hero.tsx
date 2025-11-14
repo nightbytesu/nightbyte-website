@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import GradientText from "@/components/GradientText";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -47,13 +48,14 @@ export default function Hero() {
                   Découvrir nos formations
                 </Button>
                 <Button
+                  asChild
                   className="border border-white text-white rounded-full cursor-pointer text-base md:text-lg lg:text-xl h-10 md:h-12 px-6 md:px-8 w-full sm:w-auto"
                   style={{
                     background:
                       "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",
                   }}
                 >
-                  Lancer un projet{" "}
+                  <Link href="/projects">Lancer un projet </Link>
                 </Button>
               </div>
             </div>
