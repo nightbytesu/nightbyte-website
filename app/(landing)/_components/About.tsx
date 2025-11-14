@@ -64,10 +64,8 @@ export default function About() {
             </div>
 
             <div className="flex flex-1 items-center justify-center lg:justify-end">
-              {/* --- C'EST ICI QU'ON APPLIQUE FRAMER MOTION --- */}
               <motion.div
                 className="w-3/4 lg:w-3/4 h-48 md:h-64 lg:h-72 object-contain"
-                // Indique à Framer Motion de quel état il doit passer
                 initial="hidden"
                 animate={isHovered ? "visible" : "hidden"}
                 variants={imageVariants}
@@ -76,7 +74,7 @@ export default function About() {
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
-                  src="/assets/rocket.png"
+                  src="/assets/rocket.svg"
                   alt="Rocket"
                 />
               </motion.div>
