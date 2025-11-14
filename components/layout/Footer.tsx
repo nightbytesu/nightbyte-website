@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -21,7 +21,9 @@ export default function Footer() {
                 </h3>
                 <div className="space-y-2">
                   <p className="text-gray-300 text-sm">(+213) 773 14 17 61</p>
-                  <p className="text-gray-300 text-sm">contact@nightbyte.space</p>
+                  <p className="text-gray-300 text-sm">
+                    contact@nightbyte.space
+                  </p>
                 </div>
               </div>
 
@@ -33,7 +35,7 @@ export default function Footer() {
                 <div className="flex space-x-3">
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/share/1BUSR1QLJe/"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Facebook className="w-4 h-4" />
