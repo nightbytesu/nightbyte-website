@@ -1,6 +1,5 @@
 import GradientText from "@/components/GradientText";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 
 export default function StartProject() {
   return (
@@ -23,7 +22,7 @@ export default function StartProject() {
             className="absolute -z-10 top-0 left-0 w-full h-full object-contain"
             width={800}
             height={800}
-            src="/assets/rocket.svg"
+            src="/assets/rocket.png"
             alt="Rocket"
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">

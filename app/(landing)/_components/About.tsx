@@ -74,7 +74,7 @@ export default function About() {
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
-                  src="/assets/rocket.svg"
+                  src="/assets/rocket.png"
                   alt="Rocket"
                 />
               </motion.div>
