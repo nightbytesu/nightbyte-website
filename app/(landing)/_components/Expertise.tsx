@@ -2,6 +2,7 @@ import SpotlightCard from "@/components/SpotlightCard";
 import ExpertiseItem, { ExpertiseItemProps } from "./ExpertiseItem";
 import GradientText from "@/components/GradientText";
 import { cn } from "@/lib/utils";
+import { useMemo } from "react";
 
 const expertises: Array<ExpertiseItemProps> = [
   {

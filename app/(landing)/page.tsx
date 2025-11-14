@@ -14,6 +14,8 @@ export default function Landing() {
     <div className="overflow-hidden relative">
       <div className="absolute left-0 top-0 w-1/2 h-full -z-10">
         <Image
+          height={600}
+          width={600}
           alt="Left Background"
           src="/static/contact/left-background.png"
           className="w-full h-full object-contain -z-100 opacity-40"
@@ -22,6 +24,8 @@ export default function Landing() {
 
       <div className="absolute right-0 top-0 w-1/2 h-full -z-10">
         <Image
+          height={600}
+          width={600}
           alt="Right Background"
           src="/static/contact/right-background.png"
           className="w-full h-full object-contain -z-100 opacity-40"

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Button } from "../ui/button";
 import GooeyNav from "../GooeyNav";
 import useNavigate from "@/hooks/useNavigate";
@@ -20,19 +20,19 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleLogoClick = () => {
+  const handleLogoClick = useCallback(() => {
     navigate("/");
-  };
+  }, [navigate]);
 
-  const handleContactClick = () => {
+  const handleContactClick = useCallback(() => {
     navigate("/contact");
-  };
+  }, [navigate]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
 
-  const handleMobileNavClick = (href: string) => {
+  const handleMobileNavClick = useCallback((href: string) => {
     if (href.startsWith("#") && href !== "#") {
       // Scroll to section if on home page
       if (window.location.pathname === "/") {
@@ -45,7 +45,7 @@ export default function Navbar() {
       navigate("/");
     }
     setIsMobileMenuOpen(false);
-  };
+  }, [navigate]);
 
   return (
     <>

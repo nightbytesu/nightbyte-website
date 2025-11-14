@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { memo } from "react";
 
 export interface WhyUsItemProps {
   id: number;
@@ -14,7 +15,7 @@ export interface WhyUsItemProps {
   className?: string;
 }
 
-export default function WhyUsItem({ title, icons, className }: WhyUsItemProps) {
+const WhyUsItem = memo(function WhyUsItem({ title, icons, className }: WhyUsItemProps) {
   return (
     <div
       className={cn(
@@ -44,4 +45,6 @@ export default function WhyUsItem({ title, icons, className }: WhyUsItemProps) {
       </p>
     </div>
   );
-}
+});
+
+export default WhyUsItem;

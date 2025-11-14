@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useCallback, memo } from "react";
 import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,14 +19,22 @@ interface TeamSliderProps {
   teamMembers: TeamMember[];
 }
 
-export default function TeamSlider({ teamMembers }: TeamSliderProps) {
+const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
   const swiperRef = useRef<SwiperRef>(null);
+
+  const handlePrev = useCallback(() => {
+    swiperRef.current?.swiper?.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    swiperRef.current?.swiper?.slideNext();
+  }, []);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
       <div className="relative flex items-center justify-center">
         <button
-          onClick={() => swiperRef.current?.swiper?.slidePrev()}
+          onClick={handlePrev}
           className="absolute cursor-pointer left-0 lg:left-4 z-50 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-2 transition-colors shadow-lg"
           aria-label="Previous slide"
         >
@@ -108,7 +116,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
         </Swiper>
 
         <button
-          onClick={() => swiperRef.current?.swiper?.slideNext()}
+          onClick={handleNext}
           className="absolute cursor-pointer right-0 lg:right-4 z-50 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-2 transition-colors shadow-lg"
           aria-label="Next slide"
         >
@@ -117,7 +125,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
       </div>
     </div>
   );
-}
+});
 
 function updateSlideScales(swiper: SwiperClass) {
   const slides = swiper.slides;
@@ -151,3 +159,5 @@ function updateSlideScales(swiper: SwiperClass) {
     }
   });
 }
+
+export default TeamSlider;

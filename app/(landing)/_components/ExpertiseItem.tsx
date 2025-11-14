@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { memo } from "react";
 
 export type ExpertiseItemProps = {
   id: number;
@@ -14,7 +14,7 @@ export type ExpertiseItemProps = {
   alt?: string;
 };
 
-export default function ExpertiseItem({
+const ExpertiseItem = memo(function ExpertiseItem({
   title,
   icon,
   alt,
@@ -48,4 +48,6 @@ export default function ExpertiseItem({
       </Button>
     </div>
   );
-}
+});
+
+export default ExpertiseItem;

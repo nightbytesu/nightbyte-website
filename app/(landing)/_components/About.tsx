@@ -1,12 +1,13 @@
 "use client";
 import GradientText from "@/components/GradientText";
 import MagicBento from "@/components/MagicBento";
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { motion, Variants } from "motion/react";
-
+import Image from "next/image";
 export default function About() {
   const [isHovered, setIsHovered] = useState(false);
-  const imageVariants: Variants = {
+  
+  const imageVariants: Variants = useMemo(() => ({
     hidden: {
       opacity: 0,
       scale: 0.8,
@@ -21,10 +22,10 @@ export default function About() {
         ease: [0.4, 0, 0.2, 1],
       },
     },
-  };
+  }), []);
 
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
+  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
+  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
   return (
     <div id="a-propos" className="relative">
@@ -70,7 +71,7 @@ export default function About() {
                 animate={isHovered ? "visible" : "hidden"}
                 variants={imageVariants}
               >
-                <img
+                <Image
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
