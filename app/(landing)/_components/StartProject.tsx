@@ -1,5 +1,6 @@
 import GradientText from "@/components/GradientText";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function StartProject() {
   return (
@@ -18,7 +19,7 @@ export default function StartProject() {
           monter en compétences, NightByte est votre partenaire de croissance.
         </p>
         <div className="relative hover:scale-120 transition-all py-16 md:py-24 lg:py-32 max-w-full lg:max-w-3/4 mx-auto">
-          <img
+          <Image
             className="absolute -z-10 top-0 left-0 w-full h-full object-contain"
             width={800}
             height={800}

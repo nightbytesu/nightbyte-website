@@ -28,7 +28,7 @@ export default function WhyUsItem({ title, icons, className }: WhyUsItemProps) {
           const src = typeof icon === "string" ? icon : icon.src;
           const alt = typeof icon === "string" ? icon : icon.alt;
           return (
-            <img
+            <Image
               key={`${alt}-${i}`}
               src={src}
               width={20}

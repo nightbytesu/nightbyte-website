@@ -2,6 +2,7 @@ import BackgroundEffect from "@/components/BackgroundEffect";
 import Navbar from "@/components/layout/Navbar";
 import CallToAction from "./_components/CallToAction";
 import ContactForm from "./_components/ContactForm";
+import Image from "next/image";
 
 export default function Contact() {
   return (
@@ -9,7 +10,7 @@ export default function Contact() {
       {/* Left Background */}
       <BackgroundEffect translateX="0%" translateY="0%" left="40%" top="-10%" />
       <div className="absolute left-0 top-0 w-1/2 h-full -z-10">
-        <img
+        <Image
           alt="Left Background"
           src="/static/contact/left-background.png"
           className="w-full h-full object-contain"
@@ -18,7 +19,7 @@ export default function Contact() {
 
       {/* Right Background */}
       <div className="absolute right-0 top-0 w-1/2 h-full -z-10">
-        <img
+        <Image
           alt="Right Background"
           src="/static/contact/right-background.png"
           className="w-full h-full object-contain"
