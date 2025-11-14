@@ -68,6 +68,14 @@ export const realisations = [
     link: "https://enigma-sand-seven.vercel.app/",
     thumbnail: "/static/realisations/enigma-hero.png",
   },
-
+  {
+    title: "AI Nutrition Helper",
+    link: "https://enigma-sand-seven.vercel.app/",
+    thumbnail: "/static/realisations/kalb-el-louz-hero.png",
+  },
+  {
+    title: "AI Defect Detection",
+    thumbnail: "/static/realisations/ddp-hero.png",
+  },
 ];
 

@@ -1,6 +1,7 @@
 import GradientText from "@/components/GradientText";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { realisations } from "@/constants/realisations";
+import Image from "next/image";
 
 export default function Realisations() {
   return (
@@ -23,18 +24,50 @@ export default function Realisations() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-12 max-w-sm md:max-w-md mx-auto">
-            {realisations.slice(0, 6).map((realisation) => (
-              <div
-                key={realisation.title}
-                className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-8 shadow-xl backdrop-blur-sm"
-              >
-                <h3 className="text-white font-semibold text-lg md:text-xl mb-6">
-                  {realisation.title}
-                </h3>
-                <div className="w-full h-48 md:h-56 bg-linear-to-br from-violet-500 via-purple-500 to-blue-500 rounded-xl shadow-lg"></div>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mx-8">
+            {realisations.map((realisation) => {
+              return (
+                <div
+                  key={realisation.title}
+                  className="bg-slate-800/30 border border-slate-700/50 rounded-2xl p-8 shadow-xl backdrop-blur-sm"
+                >
+                  <h3 className="text-white font-semibold text-lg md:text-xl mb-6">
+                    {realisation.title}
+                  </h3>
+                  {realisation.link ? (
+                    <a
+                      target="_blank"
+                      href={realisation.link}
+                      className="block group-hover/product:shadow-2xl"
+                    >
+                      <div className="h-42 flex">
+                        <Image
+                          alt={realisation.title}
+                          src={realisation.thumbnail}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          style={{ width: "100%", height: "auto" }}
+                          className="w-full rounded-xl shadow-lg flex-1"
+                        />
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="h-42 flex">
+                      <Image
+                        alt={realisation.title}
+                        src={realisation.thumbnail}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: "auto" }}
+                        className="w-full rounded-xl shadow-lg flex-1"
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

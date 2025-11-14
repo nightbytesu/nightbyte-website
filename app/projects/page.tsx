@@ -1,5 +1,4 @@
 import Navbar from "@/components/layout/Navbar";
-import Hero from "./_components/Hero";
 import Realisations from "./_components/Realisations";
 
 export default function Projects() {
