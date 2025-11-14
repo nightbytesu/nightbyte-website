@@ -149,12 +149,11 @@ export default function Navbar() {
               }`}
               style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
             >
-              <Image
+              <img
                 src="/assets/nightbyte-logo.png"
                 width={120}
                 height={50}
                 alt="Nightbyte"
-                priority
               />
               <button
                 onClick={toggleMobileMenu}

@@ -82,7 +82,7 @@ export default function TeamSlider({ teamMembers }: TeamSliderProps) {
                 style={{ borderRadius: 16 }}
               >
                 <div className="flex justify-center items-center">
-                  <Image
+                  <img
                     src={member.image}
                     alt={member.name}
                     width={150}

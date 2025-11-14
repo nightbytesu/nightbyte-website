@@ -73,13 +73,12 @@ export default function About() {
                 animate={isHovered ? "visible" : "hidden"}
                 variants={imageVariants}
               >
-                <Image
+                <img
                   width={400}
                   height={400}
                   className="w-full h-full object-contain"
                   src="/assets/rocket.png"
                   alt="Rocket"
-                  priority
                 />
               </motion.div>
             </div>

@@ -19,13 +19,12 @@ export default function StartProject() {
           monter en compétences, NightByte est votre partenaire de croissance.
         </p>
         <div className="relative hover:scale-120 transition-all py-16 md:py-24 lg:py-32 max-w-full lg:max-w-3/4 mx-auto">
-          <Image
+          <img
             className="absolute -z-10 top-0 left-0 w-full h-full object-contain"
             width={800}
             height={800}
             src="/assets/rocket.png"
             alt="Rocket"
-            priority
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">
             <div className="flex flex-col space-y-4 max-w-full md:max-w-sm mx-auto mt-6 md:mt-10 px-8 md:px-0">

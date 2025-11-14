@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MoveUpRight } from "lucide-react";
-import Image from "next/image";
 import React from "react";
 
 export type ExpertiseItemProps = {
@@ -29,7 +28,7 @@ export default function ExpertiseItem({
         className
       )}
     >
-      <Image
+      <img
         src={icon}
         width={48}
         height={48}

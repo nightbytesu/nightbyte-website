@@ -39,7 +39,7 @@ export default function Target() {
           }}
         >
           <div className="flex justify-center lg:justify-start">
-            <Image
+            <img
               src="/assets/earth.png"
               alt="Planet & Stars"
               width={400}
@@ -48,7 +48,6 @@ export default function Target() {
               style={{
                 filter: "drop-shadow(0 0 10px rgba(255,255,255,0.1))",
               }}
-              unoptimized
             />
           </div>
 
