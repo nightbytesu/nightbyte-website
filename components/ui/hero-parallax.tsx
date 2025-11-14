@@ -10,21 +10,18 @@ import {
 import Image from "next/image";
 
 type HeroParallaxProps = {
-  products: {
+  realisations: {
     title: string;
-    link: string;
+    link?: string;
     thumbnail: string;
   }[];
-  header: React.ReactNode
-}
+  header: React.ReactNode;
+};
 
-export const HeroParallax = ({
-  products,
-  header
-}: HeroParallaxProps) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+export const HeroParallax = ({ realisations, header }: HeroParallaxProps) => {
+  const firstRow = realisations.slice(0, 5);
+  const secondRow = realisations.slice(5, 10);
+  const thirdRow = realisations.slice(10, 15);
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -101,9 +98,8 @@ export const HeroParallax = ({
         </motion.div>
       </motion.div>
     </div>
-  )
+  );
 };
-
 
 export const ProductCard = ({
   product,
@@ -111,11 +107,36 @@ export const ProductCard = ({
 }: {
   product: {
     title: string;
-    link: string;
+    link?: string;
     thumbnail: string;
   };
   translate: MotionValue<number>;
 }) => {
+  const linkJsx = product.link ? (
+    <a
+      href={product.link}
+      className="block group-hover/product:shadow-2xl"
+      target="_blank"
+    >
+      <Image
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="object-cover object-top-left absolute h-full w-full inset-0"
+        alt={product.title}
+      />
+    </a>
+  ) : (
+    <div className="block group-hover/product:shadow-2xl">
+      <Image
+        src={product.thumbnail}
+        height="600"
+        width="600"
+        className="object-cover object-top-left absolute h-full w-full inset-0"
+        alt={product.title}
+      />
+    </div>
+  );
   return (
     <motion.div
       style={{
@@ -127,18 +148,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-120 relative shrink-0"
     >
-      <a
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
-        <Image
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-top-left absolute h-full w-full inset-0"
-          alt={product.title}
-        />
-      </a>
+      {linkJsx}
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
