@@ -7,7 +7,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 1,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/pen.svg",
+    icon: "/assets/static/expertise/pen.svg",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
     className: "flex-3",
@@ -15,7 +15,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 2,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/web.svg",
+    icon: "/assets/static/expertise/web.svg",
     description:
       "Création de sites vitrines, e-commerce, plateformes sur mesure, apps React/Next.js, Flutter & PWA.",
     className: "flex-4",
@@ -23,7 +23,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 3,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/camera.svg",
+    icon: "/assets/static/expertise/camera.svg",
     description:
       "Montage professionnel, animations, vidéos publicitaires et storytelling visuel.",
     className: "flex-8",
@@ -31,7 +31,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 4,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/ux.svg",
+    icon: "/assets/static/expertise/ux.svg",
     description:
       "Conception d'interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
     className: "flex-7",
@@ -39,7 +39,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 5,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/course.svg",
+    icon: "/assets/static/expertise/course.svg",
     className: "flex-1",
     description:
       "Identités visuelles, logos, supports marketing, communication digitale.",
@@ -47,7 +47,7 @@ const expertises: Array<ExpertiseItemProps> = [
   {
     id: 6,
     title: "Design Graphique & Branding",
-    icon: "/assets/expertise/ai.svg",
+    icon: "/assets/static/expertise/ai.svg",
     className: "flex-1",
     description:
       "Chatbots, IA générative, automatisations no-code (n8n), intégrations Python & API.",

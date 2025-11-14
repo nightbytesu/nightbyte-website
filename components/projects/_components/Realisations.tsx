@@ -54,7 +54,7 @@ export default function Realisations() {
       <div className="hidden md:block relative">
         <Image
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-          src="/assets/hero-bg.svg"
+          src="/assets/static/hero-bg.svg"
           alt="hero-bg"
           fill
           unoptimized

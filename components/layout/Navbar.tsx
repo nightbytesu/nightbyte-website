@@ -53,7 +53,7 @@ export default function Navbar() {
       <nav className="h-20 px-4 md:px-16 flex justify-between items-center bg-[#4171F92B] rounded-full">
         <button className="cursor-pointer" onClick={handleLogoClick}>
           <Image
-            src="/assets/nightbyte-logo.png"
+            src="/assets/static/nightbyte-logo.png"
             width={140}
             height={60}
             alt="Nightbyte"
@@ -150,7 +150,7 @@ export default function Navbar() {
               style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
             >
               <Image
-                src="/assets/nightbyte-logo.png"
+                src="/assets/static/nightbyte-logo.png"
                 width={120}
                 height={50}
                 alt="Nightbyte"

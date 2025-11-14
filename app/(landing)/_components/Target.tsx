@@ -40,7 +40,7 @@ export default function Target() {
         >
           <div className="flex justify-center lg:justify-start">
             <Image
-              src="/assets/earth.png"
+              src="/assets/static/earth.png"
               alt="Planet & Stars"
               width={400}
               height={400}

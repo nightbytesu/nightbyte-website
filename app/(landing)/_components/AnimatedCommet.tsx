@@ -12,7 +12,7 @@ export default function AnimatedCommet() {
     >
       <BackgroundEffect
         type="image"
-        src="/assets/commet.svg"
+        src="/assets/static/commet.svg"
         translateX="25%"
         translateY="-50%"
         right="0"

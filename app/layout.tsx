@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "video editing",
   ],
   icons: {
-    icon: [{ url: "/assets/nl.jpg", type: "image/jpg" }],
+    icon: [{ url: "/assets/static/nl.jpg", type: "image/jpg" }],
   },
 
   openGraph: {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Nightbyte",
     images: [
       {
-        url: "/assets/nl-og.jpg",
+        url: "/assets/static/nl-og.jpg",
         width: 1200,
         height: 630,
         alt: "Nightbyte",
