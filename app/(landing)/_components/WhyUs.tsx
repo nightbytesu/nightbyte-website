@@ -6,15 +6,15 @@ const whyUs: WhyUsItemProps[] = [
   {
     id: 1,
     title: "Une équipe élite, sélectionnée selon l’expertise",
-    icons: ["/static/brands/magnifier.svg"],
+    icons: ["/static/brands/magnifier.png"],
   },
   {
     id: 2,
     title: "Un workflow agile soutenu par Notion, ClickUp, Slack",
     icons: [
-      "/static/brands/notion.svg",
-      "/static/brands/clickup.svg",
-      "/static/brands/slack.svg",
+      "/static/brands/notion.png",
+      "/static/brands/clickup.png",
+      "/static/brands/slack.png",
     ],
   },
   {
@@ -22,22 +22,22 @@ const whyUs: WhyUsItemProps[] = [
     title:
       "Des technologies modernes et scalables (React, Flutter, Python, OpenAI)",
     icons: [
-      "/static/brands/react.svg",
-      "/static/brands/flutter.svg",
-      "/static/brands/python.svg",
-      "/static/brands/openai.svg",
-      "/static/brands/nextjs.svg",
+      "/static/brands/react.png",
+      "/static/brands/flutter.png",
+      "/static/brands/python.png",
+      "/static/brands/openai.png",
+      "/static/brands/nextjs.png",
     ],
   },
   {
     id: 4,
     title: "Une approche 100% personnalisée à l’objectif client",
-    icons: ["/static/brands/cloud.svg"],
+    icons: ["/static/brands/cloud.png"],
   },
   {
     id: 5,
     title: "Un accompagnement complet : du concept à la mise en ligne",
-    icons: ["/static/brands/shield.svg"],
+    icons: ["/static/brands/shield.png"],
   },
 ];
 
