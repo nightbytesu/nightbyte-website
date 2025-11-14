@@ -4,6 +4,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Footer from "@/components/layout/Footer";
 import SpaceCursor from "@/components/SpaceCursor";
+import { META_KEYWORDS } from "@/constants/keywords";
 
 const author = localFont({
   src: [
@@ -33,14 +34,7 @@ const author = localFont({
 export const metadata: Metadata = {
   title: "Nightbyte",
   description: "Turning your vision into a reality.",
-  keywords: [
-    "nightbyte",
-    "dev",
-    "marketing",
-    "agency",
-    "design",
-    "video editing",
-  ],
+  keywords: META_KEYWORDS,
   icons: {
     icon: [{ url: "/static/nl.jpg", type: "image/jpg" }],
   },
