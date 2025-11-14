@@ -23,7 +23,7 @@ export default function StartProject() {
             className="absolute -z-10 top-0 left-0 w-full h-full object-contain"
             width={800}
             height={800}
-            src="/assets/rocket.png"
+            src="/assets/static/rocket.png"
             alt="Rocket"
             priority
           />
