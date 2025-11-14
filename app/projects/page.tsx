@@ -4,7 +4,9 @@ import Realisations from "./_components/Realisations";
 export default function Projects() {
   return (
     <div>
-      <Navbar />
+      <div className="max-w-7xl mx-auto px-8 mt-12">
+        <Navbar />
+      </div>
 
       <div className="block md:hidden">
         <Realisations />

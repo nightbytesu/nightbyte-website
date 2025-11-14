@@ -57,7 +57,7 @@ export const HeroParallax = ({ realisations, header }: HeroParallaxProps) => {
   return (
     <div
       ref={ref}
-      className="h-[300vh] pt-40 overflow-hidden antialiased relative flex flex-col self-auto perspective-[1000px] transform-3d"
+      className="pt-40 pb-12 overflow-hidden antialiased relative flex flex-col self-auto perspective-[1000px] transform-3d"
     >
       {header}
       <motion.div
@@ -78,7 +78,7 @@ export const HeroParallax = ({ realisations, header }: HeroParallaxProps) => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-row mb-20 space-x-20 ">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
