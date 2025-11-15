@@ -33,7 +33,7 @@ export default function Footer() {
                 <div className="flex space-x-3">
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/people/nightbyte/61583213927884/"
                       className="text-gray-400 hover:text-blue-400 transition-colors"
                     >
                       <Facebook className="w-4 h-4" />

@@ -253,19 +253,19 @@ export default function ContactForm() {
             </h3>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/people/nightbyte/61583213927884/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 <Facebook className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/nightbyte.su/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/nightbyte/"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
