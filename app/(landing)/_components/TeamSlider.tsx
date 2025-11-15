@@ -61,7 +61,7 @@ const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
             768: {
               slidesPerView: 2,
               spaceBetween: 30,
-              centeredSlides: false, 
+              centeredSlides: false,
             },
             1024: {
               slidesPerView: 3,
@@ -83,7 +83,7 @@ const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
               className="flex items-center justify-center transition-transform duration-500 py-12 sm:py-24"
             >
               <ElectricBorder
-                className="swiper-slide-item mx-auto h-[250px] w-[250px] sm:h-[350px] sm:w-[350px] flex flex-col justify-center items-center gap-4 transition-all duration-500 hover:-translate-y-4"
+                className="swiper-slide-item mx-auto h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] md:h-[350px] md:w-[350px] flex flex-col justify-center items-center gap-4 transition-all duration-500 hover:-translate-y-4"
                 speed={1}
                 chaos={0.5}
                 thickness={2}
@@ -142,14 +142,13 @@ function updateSlideScales(swiper: SwiperClass) {
       if (isActive) {
         transformScale = 1.0;
         zIndex = 100;
-      }
-      else if (slidesPerView >= 3) {
+      } else if (slidesPerView >= 3) {
         const isNext = index === (swiper.activeIndex + 1) % slides.length;
         const isPrev =
           index === (swiper.activeIndex - 1 + slides.length) % slides.length;
 
         if (isNext || isPrev) {
-          transformScale = 0.8;  
+          transformScale = 0.8;
           zIndex = 50;
         }
       }

@@ -1,7 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { MoveUpRight } from "lucide-react";
 import GradientText from "@/components/GradientText";
 import Link from "next/link";
 
@@ -51,10 +50,7 @@ export default function Hero() {
                       "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",
                   }}
                 >
-                  <Link href="/projects">
-                    Lancer un projet{" "}
-                    <MoveUpRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-                  </Link>
+                  <Link href="/projects">Lancer un projet </Link>
                 </Button>
               </div>
             </div>

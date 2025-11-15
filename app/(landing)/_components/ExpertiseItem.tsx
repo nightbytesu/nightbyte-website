@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { memo } from "react";
 
 export type ExpertiseItemProps = {
@@ -19,7 +20,7 @@ const ExpertiseItem = memo(function ExpertiseItem({
   icon,
   alt,
   description,
-  ctaText = "View projects",
+  ctaText = "Voir projets",
   className,
 }: ExpertiseItemProps) {
   return (
@@ -41,10 +42,13 @@ const ExpertiseItem = memo(function ExpertiseItem({
         {description}
       </p>
       <Button
+        asChild
         variant={"outline"}
         className="w-fit rounded-full text-xs sm:text-sm md:text-base px-3 sm:px-8 py-1 md:py-2"
       >
-        {ctaText} <MoveUpRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
+        <Link href="/projects">
+          {ctaText} <MoveUpRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
+        </Link>
       </Button>
     </div>
   );
