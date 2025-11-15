@@ -1,4 +1,5 @@
 "use client";
+import { useMobile } from "@/hooks/useMobile";
 import React, { useEffect, useRef } from "react";
 
 interface Particle {
@@ -230,6 +231,10 @@ const SpaceCursor = () => {
       }
     };
   }, []);
+
+  const mobile = useMobile();
+
+  if (mobile) return null;
 
   return (
     <>
