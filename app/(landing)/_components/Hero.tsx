@@ -55,7 +55,7 @@ export default function Hero() {
                       "linear-gradient(90.99deg, #4171F9 0.48%, #264393 99.52%)",
                   }}
                 >
-                  <Link href="/projects">Lancer un projet </Link>
+                  <Link href="/projects">Voir nos projets</Link>
                 </Button>
               </div>
             </div>
