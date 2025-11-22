@@ -15,7 +15,7 @@ const expertises: Array<ExpertiseItemProps> = [
   },
   {
     id: 2,
-    title: "Design Graphique & Branding",
+    title: "Web & App Development",
     icon: "/static/expertise/web.png",
     description:
       "Création de sites vitrines, e-commerce, plateformes sur mesure, apps React/Next.js, Flutter & PWA.",
@@ -23,7 +23,7 @@ const expertises: Array<ExpertiseItemProps> = [
   },
   {
     id: 3,
-    title: "Design Graphique & Branding",
+    title: "Édition Vidéo & Motion Design",
     icon: "/static/expertise/camera.png",
     description:
       "Montage professionnel, animations, vidéos publicitaires et storytelling visuel.",
@@ -31,7 +31,7 @@ const expertises: Array<ExpertiseItemProps> = [
   },
   {
     id: 4,
-    title: "Design Graphique & Branding",
+    title: "UI/UX Design",
     icon: "/static/expertise/ux.png",
     description:
       "Conception d'interfaces intuitives : wireframes, prototypes, design systems, tests utilisateurs.",
@@ -39,7 +39,7 @@ const expertises: Array<ExpertiseItemProps> = [
   },
   {
     id: 5,
-    title: "Design Graphique & Branding",
+    title: "Formations professionnelles",
     icon: "/static/expertise/course.png",
     className: "flex-1",
     description:
@@ -47,7 +47,7 @@ const expertises: Array<ExpertiseItemProps> = [
   },
   {
     id: 6,
-    title: "Design Graphique & Branding",
+    title: "Solutions IA & Automatisation",
     icon: "/static/expertise/ai.png",
     className: "flex-1",
     description:
