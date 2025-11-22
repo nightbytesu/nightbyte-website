@@ -1,8 +1,16 @@
+"use client";
 import GradientText from "@/components/GradientText";
+import useNavigate from "@/hooks/useNavigate";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 export default function StartProject() {
+  const navigate = useNavigate();
+
+  const handleStartProjectClick = () => {
+    navigate("/contact");
+  };
+
   return (
     <div className="mb-8 md:mb-10 flex flex-col items-center justify-center px-8">
       <div className="max-w-full md:max-w-4xl lg:max-w-2/3 space-y-4 md:space-y-6">
@@ -28,7 +36,7 @@ export default function StartProject() {
           />
           <div className="flex z-100 flex-col space-y-4 max-w-full md:max-w-1/2 mx-auto">
             <div className="flex flex-col space-y-4 max-w-full md:max-w-sm mx-auto mt-6 md:mt-10 px-8 md:px-0">
-              <button className="cursor-pointer group relative w-full rounded-full py-2 px-8 text-white font-semibold text-base md:text-lg bg-linear-to-r from-blue-600 via-blue-700 to-indigo-800 shadow-[0_0_30px_rgba(37,99,235,0.6)] border border-transparent hover:shadow-[0_0_40px_rgba(99,102,241,0.8)] transition-all duration-300 overflow-hidden">
+              <button onClick={handleStartProjectClick} className="cursor-pointer group relative w-full rounded-full py-2 px-8 text-white font-semibold text-base md:text-lg bg-linear-to-r from-blue-600 via-blue-700 to-indigo-800 shadow-[0_0_30px_rgba(37,99,235,0.6)] border border-transparent hover:shadow-[0_0_40px_rgba(99,102,241,0.8)] transition-all duration-300 overflow-hidden">
                 <span
                   style={{
                     background:
