@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useCallback, memo } from "react";
-import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -20,7 +20,7 @@ interface TeamSliderProps {
 }
 
 const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
-  const swiperRef = useRef<SwiperRef>(null);
+  const swiperRef = useRef<any>(null);
 
   const handlePrev = useCallback(() => {
     swiperRef.current?.swiper?.slidePrev();
@@ -80,10 +80,10 @@ const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
           {[...teamMembers, ...teamMembers].map((member, i) => (
             <SwiperSlide
               key={`${member.id}-${i}`}
-              className="flex items-center justify-center transition-transform duration-500 py-12 sm:py-24"
+              className="flex items-center justify-center transition-transform duration-500 py-8 sm:py-24"
             >
               <ElectricBorder
-                className="swiper-slide-item mx-auto h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] md:h-[350px] md:w-[350px] flex flex-col justify-center items-center gap-4 transition-all duration-500 hover:-translate-y-4"
+                className="swiper-slide-item mx-auto h-[200px] w-[140px] sm:h-[280px] sm:w-[200px] md:h-[350px] md:w-[350px] flex flex-col justify-center items-center gap-2 sm:gap-4 transition-all duration-500 hover:-translate-y-4"
                 speed={1}
                 chaos={0.5}
                 thickness={2}
@@ -95,18 +95,18 @@ const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
                     alt={member.name}
                     width={150}
                     height={150}
-                    className="object-cover relative rounded-2xl w-[150px] h-[150px] sm:w-[200px] sm:h-[200px]"
+                    className="object-cover relative rounded-2xl w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px]"
                     style={{
                       boxShadow: "rgba(65,113,249, 0.4) 0px 0px 0px 5px",
                     }}
                   />
                 </div>
 
-                <div className="text-center mt-4 sm:mt-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                <div className="text-center mt-2 sm:mt-8 px-2">
+                  <h3 className="text-sm sm:text-xl md:text-2xl font-semibold text-white leading-tight">
                     {member.name}
                   </h3>
-                  <p className="text-sm sm:text-lg text-slate-400 mt-1">
+                  <p className="text-xs sm:text-sm md:text-lg text-slate-400 mt-1 leading-tight">
                     {member.role}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ const TeamSlider = memo(function TeamSlider({ teamMembers }: TeamSliderProps) {
   );
 });
 
-function updateSlideScales(swiper: SwiperClass) {
+function updateSlideScales(swiper: any) {
   const slides = swiper.slides;
   slides.forEach((slide: HTMLElement, index: number) => {
     const item = slide.querySelector(".swiper-slide-item") as HTMLElement;
