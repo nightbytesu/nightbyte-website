@@ -3,7 +3,6 @@ import "./globals.css";
 
 import localFont from "next/font/local";
 import Footer from "@/components/layout/Footer";
-import SpaceCursor from "@/components/SpaceCursor";
 import { META_KEYWORDS } from "@/constants/keywords";
 
 const author = localFont({
@@ -64,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${author.className} antialiased`}>
-        <SpaceCursor />
+    
         {children}
         <div className="max-w-7xl mx-auto px-8">
           <Footer />

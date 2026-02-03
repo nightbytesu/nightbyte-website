@@ -9,7 +9,7 @@ export default function Hero() {
     <div className="relative min-h-screen h-screen scale-y-105 overflow-hidden">
       <Image
         className="absolute inset-0 w-full h-full object-cover -z-10"
-        src="/static/hero-bg.png"
+        src="/static/bg-hero.png"
         alt="hero-bg"
         fill
         priority
@@ -23,18 +23,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center pb-20 md:pb-40">
-          <div className="max-w-6xl mx-auto w-full px-8 md:px-4">
+        <div className="flex-1 flex flex-col justify-center pb-20 md:pb-40 pt-75">
+          <div className="max-w-7xl mx-auto w-full px-8 md:px-4"> 
             <div className="flex flex-col items-center max-w-full lg:max-w-4/5 mx-auto justify-center">
               <GradientText
                 colors={["#D1DDFF", "#7B9EFF", "white"]}
                 showBorder={false}
-                className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-center leading-tight"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-center leading-tight"
                 textClassName="pb-3"
               >
                 Nous concevons des expériences digitales performantes.
               </GradientText>
-              <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-16 text-center max-w-4xl">
+              <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-16 text-center max-w-3xl">
                 NightByte est une agence digitale 360° spécialisée en
                 développement web/mobile, design, IA et création de contenu.
                 Nous unissons experts et technologies modernes pour transformer
