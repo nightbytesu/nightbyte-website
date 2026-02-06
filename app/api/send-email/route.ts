@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+
 export async function POST(request: NextRequest) {
   try {
     const { name, phone, email, message } = await request.json()

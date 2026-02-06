@@ -31,18 +31,25 @@ export default function Landing() {
           className="w-full h-full object-contain -z-100 opacity-40"
         />
       </div>
+      
+      {/* ADD RELATIVE AND Z-50 HERE */}
       <div>
         <Hero />
       </div>
-      <div className="max-w-7xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8">
+      
+      {/* ADD RELATIVE AND Z-10 HERE */}
+      <div className="max-w-7xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8 relative">
         <About />
       </div>
+      
       <div className="relative">
-        <div className="max-w-7xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8 z-200">
+        <div className="max-w-7xl mx-auto mb-20 md:mb-32 lg:mb-40 px-8">
           <Expertise />
         </div>
         <BackgroundEffect translateY="-25%" translateX="-50%" left="50%" />
       </div>
+
+      {/* ... rest of the sections */}
 
       <AnimatedCommet />
 

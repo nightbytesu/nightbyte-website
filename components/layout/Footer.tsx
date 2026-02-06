@@ -21,7 +21,7 @@ export default function Footer() {
                 </h3>
                 <div className="space-y-2">
                   <p className="text-gray-300 text-sm">(+213) 773 14 17 61</p>
-                  <p className="text-gray-300 text-sm">contact@nightbyte.space</p>
+                  <p className="text-gray-300 text-sm">nightbytesu@gmail.com</p>
                 </div>
               </div>
 

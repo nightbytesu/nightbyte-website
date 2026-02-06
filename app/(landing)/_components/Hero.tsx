@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen h-screen scale-y-105 overflow-hidden">
+    <section className="relative isolate min-h-screen overflow-hidden">
       <Image
         className="absolute inset-0 w-full h-full object-cover -z-10"
         src="/static/bg-hero.png"
@@ -16,15 +16,15 @@ export default function Hero() {
         unoptimized
       />
 
-      <div className="flex flex-col h-full relative z-10">
+      <div className="relative z-10 min-h-screen flex flex-col">
         <div className="pt-8 md:pt-14 pb-8">
           <div className="max-w-6xl mx-auto w-full px-8 md:px-4">
             <Navbar />
           </div>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center pb-20 md:pb-40 pt-75">
-          <div className="max-w-7xl mx-auto w-full px-8 md:px-4"> 
+        <div className="flex-1 flex items-center justify-center">
+          <div className="max-w-7xl mx-auto w-full px-8 md:px-4 py-12"> 
             <div className="flex flex-col items-center max-w-full lg:max-w-4/5 mx-auto justify-center">
               <GradientText
                 colors={["#D1DDFF", "#7B9EFF", "white"]}
@@ -62,6 +62,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

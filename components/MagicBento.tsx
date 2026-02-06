@@ -338,7 +338,9 @@ const GlobalSpotlight: React.FC<{
         rgba(${glowColor}, 0.01) 65%,
         transparent 70%
       );
-      z-index: 200;
+      /* keep spotlight visually above the section but below major layout layers
+         so it doesn't unexpectedly cover other page sections like the Hero */
+      z-index: 0;
       opacity: 0;
       transform: translate(-50%, -50%);
       mix-blend-mode: screen;
