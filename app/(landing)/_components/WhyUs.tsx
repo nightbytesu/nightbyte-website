@@ -28,6 +28,7 @@ const whyUs: WhyUsItemProps[] = [
       "/static/brands/openai.png",
       "/static/brands/nextjs.png",
     ],
+    
   },
   {
     id: 4,
@@ -37,7 +38,7 @@ const whyUs: WhyUsItemProps[] = [
   {
     id: 5,
     title: "Un accompagnement complet : du concept à la mise en ligne",
-    icons: ["/static/brands/shield.png"],
+    icons: ["/static/brands/shield.svg"],
   },
 ];
 
